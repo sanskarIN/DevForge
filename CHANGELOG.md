@@ -6,6 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [4.0.0] — 2026-09-28
+
+### 🎉 Major Rebrand — DevForge
+- Project renamed from "Web Development Mastery" to **DevForge**
+- Updated all internal references, URLs, titles, and meta tags
+- New repository: `github.com/sanskarIN/DevForge`
+- New GitHub Pages URL: `sanskarin.github.io/DevForge`
+
+### 🐍 Python Module (NEW)
+- Complete Python learning module with 30 concepts
+- Topics: Variables, Data Types, Strings, Lists, Tuples, Dicts, Sets, Loops, Functions, Lambda, List Comprehensions, Error Handling, File I/O, Classes, Inheritance, Decorators, Generators, Iterators, Context Managers, Regex, Modules, Virtual Environments, pip, async/await, Type Hints, dataclasses, f-strings, Walrus Operator, Pattern Matching
+- Full gamification (XP, ranks, mastered tracking)
+- 25+ theme presets, code playground, favorites, search
+- Secondary pages: about, developer, privacy, support, terms, thanks, 404
+
+### 🚀 GitHub Pages Deployment
+- Updated deployment workflow for DevForge
+- Live at: `https://sanskarin.github.io/DevForge/`
+
+### 🧭 Navigation
+- Added Python to cross-module navigation in all module index pages
+- Added Python module card to landing page
+- Updated footer with Python Mastery link
+
+---
+
 ## [3.4.0] — 2026-09-28
 
 ### 🆕 New Feature Pages
