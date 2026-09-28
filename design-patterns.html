@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Design Patterns Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="splash.png">
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --text: #f8fafc;
+            --accent1: #6c63ff;
+            --accent2: #3ecfcf;
+            --surface: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem; }
+        h1 { text-align: center; margin-bottom: 2rem; background: linear-gradient(45deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .controls { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        select, input { padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); outline: none; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; gap: 1rem; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; background: rgba(108, 99, 255, 0.2); color: var(--accent1); width: fit-content; }
+        .badge.creational { background: rgba(62, 207, 207, 0.2); color: var(--accent2); }
+        .badge.structural { background: rgba(108, 99, 255, 0.2); color: var(--accent1); }
+        .badge.behavioral { background: rgba(255, 152, 0, 0.2); color: #ff9800; }
+        .badge.modern { background: rgba(233, 30, 99, 0.2); color: #e91e63; }
+        pre { background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.9rem; border: 1px solid var(--border); }
+        code { color: #a5b4fc; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem; }
+        .pros { color: #4ade80; }
+        .cons { color: #f87171; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Design Patterns</h1>
+    <div class="controls">
+        <input type="text" id="search" placeholder="Search patterns..." onkeyup="filterPatterns()">
+        <select id="categoryFilter" onchange="filterPatterns()">
+            <option value="all">All Categories</option>
+            <option value="creational">Creational</option>
+            <option value="structural">Structural</option>
+            <option value="behavioral">Behavioral</option>
+            <option value="modern">Modern</option>
+        </select>
+    </div>
+    <div class="grid" id="patternGrid"></div>
+
+    <script>
+        const patterns = [
+            { name: 'Singleton', category: 'creational', desc: 'Ensures a class has only one instance and provides a global point of access to it.', use: 'Database connections, global state management.', code: `class Singleton {
+  constructor() {
+    if (!Singleton.instance) {
+      Singleton.instance = this;
+    }
+    return Singleton.instance;
+  }
+}`, pros: ['Single instance', 'Global access'], cons: ['Global state issues', 'Hard to test'] },
+            { name: 'Factory', category: 'creational', desc: 'Creates objects without specifying the exact class to create.', use: 'Creating different types of UI components.', code: `class Factory {
+  create(type) {
+    if (type === 'A') return new ObjectA();
+    if (type === 'B') return new ObjectB();
+  }
+}`, pros: ['Loose coupling', 'Scalable'], cons: ['Complex code', 'Too many classes'] },
+            { name: 'Builder', category: 'creational', desc: 'Separates object construction from its representation.', use: 'Complex object configurations.', code: `class Builder {
+  setA(a) { this.a = a; return this; }
+  setB(b) { this.b = b; return this; }
+  build() { return new Product(this); }
+}`, pros: ['Step-by-step', 'Readable'], cons: ['Requires separate builder', 'Verbose'] },
+            { name: 'Prototype', category: 'creational', desc: 'Creates new objects by copying an existing object.', use: 'Performance optimization for heavy objects.', code: `const prototype = {
+  clone() { return Object.create(this); }
+};`, pros: ['Performance', 'No subclassing'], cons: ['Deep copy complexity'] },
+            { name: 'Adapter', category: 'structural', desc: 'Allows incompatible interfaces to work together.', use: 'Integrating third-party libraries.', code: `class Adapter {
+  constructor(legacy) { this.legacy = legacy; }
+  request() { this.legacy.oldRequest(); }
+}`, pros: ['Compatibility', 'Reusability'], cons: ['Adds complexity'] },
+            { name: 'Decorator', category: 'structural', desc: 'Adds behavior to objects dynamically.', use: 'Extending functionality without subclassing.', code: `function decorate(obj) {
+  obj.newFeature = () => console.log('Added');
+  return obj;
+}`, pros: ['Flexible', 'No subclasses'], cons: ['Many small objects'] },
+            { name: 'Facade', category: 'structural', desc: 'Provides a simplified interface to a complex subsystem.', use: 'Simplifying complex APIs.', code: `class Facade {
+  constructor() { this.subsys = new ComplexSystem(); }
+  simpleOperation() { this.subsys.step1(); this.subsys.step2(); }
+}`, pros: ['Simplified interface', 'Decoupled'], cons: ['God object risk'] },
+            { name: 'Proxy', category: 'structural', desc: 'Provides a placeholder for another object to control access.', use: 'Caching, access control.', code: `const proxy = new Proxy(target, {
+  get(obj, prop) { return obj[prop]; }
+});`, pros: ['Access control', 'Lazy initialization'], cons: ['Overhead', 'Complexity'] },
+            { name: 'Observer', category: 'behavioral', desc: 'Defines a one-to-many dependency so when one object changes state, all dependents are notified.', use: 'Event handling, pub/sub systems.', code: `class Subject {
+  constructor() { this.observers = []; }
+  subscribe(fn) { this.observers.push(fn); }
+  notify(data) { this.observers.forEach(fn => fn(data)); }
+}`, pros: ['Loose coupling', 'Dynamic'], cons: ['Memory leaks', 'Unexpected updates'] },
+            { name: 'Strategy', category: 'behavioral', desc: 'Defines a family of algorithms, encapsulates each one, and makes them interchangeable.', use: 'Sorting algorithms, payment methods.', code: `class Context {
+  constructor(strategy) { this.strategy = strategy; }
+  execute(data) { return this.strategy.do(data); }
+}`, pros: ['Swappable algorithms', 'No conditionals'], cons: ['Many classes', 'Client must know strategies'] },
+            { name: 'Command', category: 'behavioral', desc: 'Encapsulates a request as an object, allowing parameterization of clients.', use: 'Undo/Redo systems.', code: `class Command {
+  constructor(receiver) { this.receiver = receiver; }
+  execute() { this.receiver.action(); }
+}`, pros: ['Undo/redo', 'Decoupling'], cons: ['Lots of small classes'] },
+            { name: 'Iterator', category: 'behavioral', desc: 'Provides a way to access elements of an aggregate object sequentially.', use: 'Traversing complex data structures.', code: `function* iterator(collection) {
+  for (let item of collection) yield item;
+}`, pros: ['Standard traversal', 'Clean client code'], cons: ['Overkill for simple arrays'] },
+            { name: 'Mediator', category: 'behavioral', desc: 'Defines an object that encapsulates how a set of objects interact.', use: 'Chat rooms, complex form validation.', code: `class Mediator {
+  notify(sender, event) {
+    if (event === 'A') { /* coordinate */ }
+  }
+}`, pros: ['Centralized control', 'Decoupled components'], cons: ['God object anti-pattern'] },
+            { name: 'Module', category: 'modern', desc: 'Encapsulates private variables and methods using closures.', use: 'Information hiding.', code: `const Module = (function() {
+  let privateVar = 0;
+  return { getVar: () => privateVar };
+})();`, pros: ['Encapsulation', 'Namespace'], cons: ['Hard to test private methods'] },
+            { name: 'Revealing Module', category: 'modern', desc: 'A variant of Module pattern that reveals public pointers to private functions.', use: 'Clean public APIs.', code: `const Revealing = (function() {
+  function privateFn() {}
+  return { publicFn: privateFn };
+})();`, pros: ['Clean syntax', 'Explicit API'], cons: ['Cannot easily override private functions'] }
+        ];
+
+        function renderPatterns(p) {
+            const grid = document.getElementById('patternGrid');
+            grid.innerHTML = '';
+            p.forEach(pattern => {
+                grid.innerHTML += \`
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h2>\${pattern.name}</h2>
+                            <span class="badge \${pattern.category}">\${pattern.category}</span>
+                        </div>
+                        <p>\${pattern.desc}</p>
+                        <p><strong>Use case:</strong> \${pattern.use}</p>
+                        <pre><code>\${pattern.code}</code></pre>
+                        <div class="pros-cons">
+                            <div><strong class="pros">Pros:</strong><ul>\${pattern.pros.map(p=>\`<li>\${p}</li>\`).join('')}</ul></div>
+                            <div><strong class="cons">Cons:</strong><ul>\${pattern.cons.map(c=>\`<li>\${c}</li>\`).join('')}</ul></div>
+                        </div>
+                    </div>
+                \`;
+            });
+        }
+
+        function filterPatterns() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const filtered = patterns.filter(p => {
+                const matchesQuery = p.name.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query);
+                const matchesCategory = category === 'all' || p.category === category;
+                return matchesQuery && matchesCategory;
+            });
+            renderPatterns(filtered);
+        }
+
+        renderPatterns(patterns);
+    </script>
+</body>
+</html>
