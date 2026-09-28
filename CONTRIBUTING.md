@@ -87,6 +87,7 @@ DevForge/
 ├── CSS/                    # CSS Mastery module (same structure)
 ├── JavaScript/             # JavaScript Mastery module
 ├── React/                  # React Mastery module
+├── Python/                 # Python Mastery module (same structure)
 ├── about.html              # Root about page
 ├── developer.html          # Root developer docs
 ├── privacy.html            # Root privacy policy
