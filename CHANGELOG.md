@@ -1,6 +1,6 @@
 # 📝 Changelog
 
-All notable changes to **Web Development Mastery** will be documented in this file.
+All notable changes to **DevForge** will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [4.0.0] — 2026-09-28
 
 ### 🎉 Major Rebrand — DevForge
-- Project renamed from "Web Development Mastery" to **DevForge**
+- Project renamed from "DevForge" to **DevForge**
 - Updated all internal references, URLs, titles, and meta tags
 - New repository: `github.com/sanskarIN/DevForge`
 - New GitHub Pages URL: `sanskarin.github.io/DevForge`
