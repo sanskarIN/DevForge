@@ -6232,6 +6232,27 @@ const FLASHCARDS = [
     </code></pre>
     `
   }
+,
+  {
+    id: "tag-details", title: 'The <details>/<summary> Tags', badge: "INTERACTIVE", emoji: "📂", content: `
+
+    <h3>📌 Deep Dive: Advanced Concept</h3>
+    <p>The <code>&lt;details/summary&gt;</code> element is a powerful semantic HTML5 element that enables developers to create more meaningful, accessible, and interactive web pages without relying on JavaScript workarounds.</p>
+    <h4>⚙️ Under the Hood</h4>
+    <p>When the browser parses the <code>&lt;details/summary&gt;</code> tag, it constructs a corresponding DOM node with built-in behaviors and ARIA roles. Modern browsers provide native styling and interaction patterns, reducing the need for custom JavaScript implementations.</p>
+    <div class="cb">
+      <div class="cb-h"><span>💡 Pro Tip & Best Practice</span></div>
+      <div class="cb-b"><p>Always use semantic HTML elements like <code>&lt;details/summary&gt;</code> when available instead of building custom solutions with divs and JavaScript. This improves accessibility, reduces code complexity, and leverages browser-native optimizations.</p></div>
+    </div>
+    <h4>💻 Advanced Implementation Example</h4>
+    <pre><code class="language-html">
+&lt;!-- Using the details/summary element --&gt;
+&lt;details/summary&gt;
+  &lt;!-- Content goes here --&gt;
+&lt;/details/summary&gt;
+    </code></pre>
+    `
+  }
 
 ];
 
