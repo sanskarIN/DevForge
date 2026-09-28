@@ -1,6 +1,6 @@
-# 🤝 Contributing to Web Development Mastery
+# 🤝 Contributing to DevForge
 
-Thank you for your interest in contributing to **Web Development Mastery**! Every contribution helps make this free educational platform better for developers worldwide.
+Thank you for your interest in contributing to **DevForge**! Every contribution helps make this free educational platform better for developers worldwide.
 
 ## 📋 Table of Contents
 
@@ -32,8 +32,8 @@ By participating in this project, you agree to maintain a respectful, inclusive 
 1. **Fork** this repository on GitHub
 2. **Clone** your fork locally:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/Web-Development-Mastery.git
-   cd Web-Development-Mastery
+   git clone https://github.com/YOUR-USERNAME/DevForge.git
+   cd DevForge
    ```
 3. **Open** any HTML file directly in your browser to start testing
 4. Create a new branch for your changes:
@@ -71,7 +71,7 @@ By participating in this project, you agree to maintain a respectful, inclusive 
 ## 📂 Project Structure
 
 ```
-Web-Development-Mastery/
+DevForge/
 ├── index.html              # Landing page (Hub)
 ├── HTML/                   # HTML Mastery module
 │   ├── index.html          # Main module page
@@ -246,4 +246,4 @@ We use **emoji-prefixed** commit messages for clarity:
 - **GitHub**: [@sanskarIN](https://github.com/sanskarIN)
 - **YouTube**: [@sanskarIN](https://youtube.com/@sanskarIN)
 
-Thank you for helping make Web Development Mastery better! 🚀
+Thank you for helping make DevForge better! 🚀
