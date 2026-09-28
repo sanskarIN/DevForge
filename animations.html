@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Playground</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="splash.png">
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --text: #f8fafc;
+            --accent1: #6c63ff;
+            --accent2: #3ecfcf;
+            --surface: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem; display: grid; grid-template-columns: 350px 1fr; gap: 2rem; min-height: 100vh; }
+        @media(max-width: 900px) { body { grid-template-columns: 1fr; } }
+        h1, h2 { background: linear-gradient(45deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+        .panel { background: var(--surface); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); backdrop-filter: blur(10px); display: flex; flex-direction: column; gap: 1rem; }
+        .control-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        label { font-size: 0.9rem; color: #94a3b8; }
+        select, input[type="range"] { padding: 0.5rem; border-radius: 6px; border: 1px solid var(--border); background: rgba(0,0,0,0.3); color: var(--text); outline: none; }
+        .preview-area { display: flex; justify-content: center; align-items: center; min-height: 400px; background: rgba(0,0,0,0.2); border-radius: 12px; border: 1px dashed var(--border); overflow: hidden; position: relative; }
+        .box { width: 100px; height: 100px; background: linear-gradient(135deg, var(--accent1), var(--accent2)); border-radius: 12px; box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4); }
+        pre { background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.9rem; border: 1px solid var(--border); color: #a5b4fc; }
+        .btn { background: var(--accent1); color: white; border: none; padding: 0.75rem; border-radius: 8px; cursor: pointer; font-weight: 600; transition: 0.2s; }
+        .btn:hover { background: var(--accent2); }
+
+        /* Keyframes */
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-50px); } }
+        @keyframes fade { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes slide { 0% { transform: translateX(-100px); } 100% { transform: translateX(0); } }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } }
+        @keyframes flip { 0% { transform: perspective(400px) rotateY(0); } 100% { transform: perspective(400px) rotateY(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h1>Animation Controls</h1>
+        
+        <div class="control-group">
+            <label>Name</label>
+            <select id="animName" onchange="update()">
+                <option value="bounce">Bounce</option>
+                <option value="fade">Fade</option>
+                <option value="slide">Slide</option>
+                <option value="spin">Spin</option>
+                <option value="pulse">Pulse</option>
+                <option value="shake">Shake</option>
+                <option value="flip">Flip</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Duration (<span id="durVal">1</span>s)</label>
+            <input type="range" id="animDur" min="0.1" max="5" step="0.1" value="1" oninput="update()">
+        </div>
+
+        <div class="control-group">
+            <label>Timing Function</label>
+            <select id="animTiming" onchange="update()">
+                <option value="ease">ease</option>
+                <option value="linear">linear</option>
+                <option value="ease-in">ease-in</option>
+                <option value="ease-out">ease-out</option>
+                <option value="ease-in-out">ease-in-out</option>
+                <option value="cubic-bezier(0.68, -0.55, 0.265, 1.55)">bounce (custom)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Iteration Count</label>
+            <select id="animIter" onchange="update()">
+                <option value="infinite">infinite</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+        <button class="btn" onclick="replay()">Replay Animation</button>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+        <div class="preview-area">
+            <div class="box" id="box"></div>
+        </div>
+        
+        <div class="panel">
+            <h2>CSS Output</h2>
+            <pre id="cssOutput"></pre>
+            <button class="btn" onclick="copyCSS()">Copy CSS</button>
+        </div>
+    </div>
+
+    <script>
+        function update() {
+            const name = document.getElementById('animName').value;
+            const dur = document.getElementById('animDur').value;
+            const timing = document.getElementById('animTiming').value;
+            const iter = document.getElementById('animIter').value;
+            
+            document.getElementById('durVal').textContent = dur;
+
+            const cssString = \`\${dur}s \${timing} 0s \${iter} normal none running \${name}\`;
+            
+            const box = document.getElementById('box');
+            box.style.animation = 'none'; // reset
+            void box.offsetWidth; // trigger reflow
+            box.style.animation = cssString;
+
+            document.getElementById('cssOutput').textContent = \`.element {\\n  animation: \${cssString};\\n}\`;
+        }
+
+        function replay() {
+            update();
+        }
+
+        function copyCSS() {
+            const css = document.getElementById('cssOutput').textContent;
+            navigator.clipboard.writeText(css);
+            alert('CSS Copied to clipboard!');
+        }
+
+        update(); // Init
+    </script>
+</body>
+</html>
