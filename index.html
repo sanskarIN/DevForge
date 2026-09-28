@@ -2277,37 +2277,244 @@
                     <h2>💬 What Developers Say</h2>
                 </div>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">This platform replaced three paid courses for me. The interactive code sandboxes and deep-dive explanations make complex concepts click instantly.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">🧑💻</div>
-                        <div class="testimonial-info">
-                            <h5>Arjun Mehta</h5>
-                            <p>Frontend Developer, Bangalore</p>
+            <!-- Carousel Container -->
+            <div style="position: relative; max-width: 1280px; margin: 0 auto; overflow: hidden;">
+                <div id="testimonialCarousel" style="display: flex; transition: transform 0.5s ease-in-out; gap: 24px; padding: 24px;">
+                    <!-- Card 1 -->
+                    <div class="testimonial-card" style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;">
+                        <div style="color: #fbbf24; margin-bottom: 12px; font-size: 18px;">★★★★★</div>
+                        <p class="testimonial-text">This platform replaced three paid courses for me. The interactive code sandboxes and deep-dive explanations make complex concepts click instantly.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">🧑‍💻</div>
+                            <div class="testimonial-info">
+                                <h5>Arjun Mehta</h5>
+                                <p>Frontend Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="testimonial-card" style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;">
+                        <div style="color: #fbbf24; margin-bottom: 12px; font-size: 18px;">★★★★★</div>
+                        <p class="testimonial-text">The best free resource I've found for learning CSS. The 200 properties with live demos and the theme gallery are absolutely premium quality.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">👩‍💻</div>
+                            <div class="testimonial-info">
+                                <h5>Priya Sharma</h5>
+                                <p>CS Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="testimonial-card" style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;">
+                        <div style="color: #fbbf24; margin-bottom: 12px; font-size: 18px;">★★★★★</div>
+                        <p class="testimonial-text">Zero dependencies, zero setup — just open and learn. I use it offline during my commute. The progress tracking and XP system keeps me motivated daily.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">👨‍🎓</div>
+                            <div class="testimonial-info">
+                                <h5>Ravi Kumar</h5>
+                                <p>Self-taught Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="testimonial-card" style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;">
+                        <div style="color: #fbbf24; margin-bottom: 12px; font-size: 18px;">★★★★★</div>
+                        <p class="testimonial-text">I finally understand React hooks thanks to the intuitive live examples. This beats reading the official documentation hands down!</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">👩‍🚀</div>
+                            <div class="testimonial-info">
+                                <h5>Sarah Jenkins</h5>
+                                <p>Junior Dev</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="testimonial-card" style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;">
+                        <div style="color: #fbbf24; margin-bottom: 12px; font-size: 18px;">★★★★★</div>
+                        <p class="testimonial-text">The dark theme is gorgeous and the UI is incredibly snappy. It's a joy to use everyday. Highly recommended for beginners.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">🥷</div>
+                            <div class="testimonial-info">
+                                <h5>David Chen</h5>
+                                <p>Software Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="testimonial-card" style="flex: 0 0 calc(33.333% - 16px); min-width: 300px;">
+                        <div style="color: #fbbf24; margin-bottom: 12px; font-size: 18px;">★★★★★</div>
+                        <p class="testimonial-text">As an instructor, I always point my students to Web Dev Mastery. It is comprehensive, well-structured, and easy to follow.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">👨‍🏫</div>
+                            <div class="testimonial-info">
+                                <h5>Michael Roberts</h5>
+                                <p>Bootcamp Instructor</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">The best free resource I've found for learning CSS. The 200 properties with live demos and the theme gallery are absolutely premium quality.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">👩💻</div>
-                        <div class="testimonial-info">
-                            <h5>Priya Sharma</h5>
-                            <p>CS Student, Delhi University</p>
+                
+                <div style="display: flex; justify-content: center; gap: 8px; margin-top: 16px;" id="carouselDots">
+                    <!-- Dots will be injected by JS -->
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const carousel = document.getElementById('testimonialCarousel');
+                    const cards = carousel.children;
+                    const dotsContainer = document.getElementById('carouselDots');
+                    let currentIndex = 0;
+                    const totalCards = cards.length;
+                    const cardsToShow = window.innerWidth < 768 ? 1 : (window.innerWidth < 1024 ? 2 : 3);
+                    const totalDots = Math.ceil(totalCards / cardsToShow);
+                    let autoScrollInterval;
+
+                    // Create dots
+                    for (let i = 0; i < totalDots; i++) {
+                        const dot = document.createElement('button');
+                        dot.style.width = '12px';
+                        dot.style.height = '12px';
+                        dot.style.borderRadius = '50%';
+                        dot.style.border = 'none';
+                        dot.style.background = i === 0 ? 'var(--accent1)' : 'var(--border)';
+                        dot.style.cursor = 'pointer';
+                        dot.style.transition = 'all 0.3s';
+                        dot.addEventListener('click', () => goToSlide(i));
+                        dotsContainer.appendChild(dot);
+                    }
+
+                    function updateDots() {
+                        Array.from(dotsContainer.children).forEach((dot, idx) => {
+                            dot.style.background = idx === currentIndex ? 'var(--accent1)' : 'var(--border)';
+                            dot.style.transform = idx === currentIndex ? 'scale(1.2)' : 'scale(1)';
+                        });
+                    }
+
+                    function goToSlide(index) {
+                        currentIndex = index;
+                        const percentage = -(currentIndex * 100);
+                        carousel.style.transform = \`translateX(\${percentage}%)\`;
+                        updateDots();
+                    }
+
+                    function nextSlide() {
+                        currentIndex = (currentIndex + 1) % totalDots;
+                        goToSlide(currentIndex);
+                    }
+
+                    function startAutoScroll() {
+                        autoScrollInterval = setInterval(nextSlide, 4000);
+                    }
+
+                    function stopAutoScroll() {
+                        clearInterval(autoScrollInterval);
+                    }
+
+                    startAutoScroll();
+
+                    carousel.addEventListener('mouseenter', stopAutoScroll);
+                    carousel.addEventListener('mouseleave', startAutoScroll);
+                });
+            </script>
+        </section>
+
+        <!-- LIVE CODE PREVIEW SECTION -->
+        <section class="features-section" style="padding-top: 50px;">
+            <div class="section-container" style="padding: 0 24px;">
+                <div class="section-heading">
+                    <h2 class="features-title">Try It Yourself — Live Code Preview</h2>
+                </div>
+                
+                <div style="background: var(--bg3); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; max-width: 1000px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
+                    <div style="padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2);">
+                        <div style="display: flex; gap: 8px;">
+                            <span style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f56;"></span>
+                            <span style="width: 12px; height: 12px; border-radius: 50%; background: #ffbd2e;"></span>
+                            <span style="width: 12px; height: 12px; border-radius: 50%; background: #27c93f;"></span>
+                        </div>
+                        <div style="display: flex; gap: 12px;">
+                            <button onclick="resetLiveCode()" style="background: var(--bg2); border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Reset</button>
+                            <button onclick="runLiveCode()" style="background: linear-gradient(135deg, var(--accent1), var(--accent2)); border: none; color: white; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);">Run Code ▶</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; min-height: 400px;">
+                        <div style="border-right: 1px solid var(--border);">
+                            <textarea id="liveCodeInput" style="width: 100%; height: 100%; padding: 24px; background: #0d1117; color: #c9d1d9; border: none; font-family: 'Fira Code', monospace; font-size: 15px; resize: none; outline: none; line-height: 1.6;" spellcheck="false"></textarea>
+                        </div>
+                        <div style="background: white; padding: 0;">
+                            <iframe id="liveCodePreview" style="width: 100%; height: 100%; border: none;"></iframe>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">Zero dependencies, zero setup — just open and learn. I use it offline during my commute. The progress tracking and XP system keeps me motivated daily.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">👨🎓</div>
-                        <div class="testimonial-info">
-                            <h5>Ravi Kumar</h5>
-                            <p>Self-taught Developer, Pune</p>
-                        </div>
-                    </div>
-                </div>
+                
+                <script>
+                    const defaultLiveCode = \`<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f0f4f8;
+    font-family: sans-serif;
+  }
+  
+  .card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  h1 { color: #6c63ff; margin-top: 0; }
+  
+  button {
+    background: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<div class="card">
+  <h1>Hello, Web Dev!</h1>
+  <p>Try editing this code.</p>
+  <button onclick="alert('You clicked me!')">Click Me</button>
+</div>\`;
+
+                    const liveCodeInput = document.getElementById('liveCodeInput');
+                    const liveCodePreview = document.getElementById('liveCodePreview');
+
+                    function runLiveCode() {
+                        const code = liveCodeInput.value;
+                        const iframeDoc = liveCodePreview.contentDocument || liveCodePreview.contentWindow.document;
+                        iframeDoc.open();
+                        iframeDoc.write(code);
+                        iframeDoc.close();
+                    }
+
+                    function resetLiveCode() {
+                        liveCodeInput.value = defaultLiveCode;
+                        runLiveCode();
+                    }
+
+                    // Initial load
+                    document.addEventListener('DOMContentLoaded', () => {
+                        resetLiveCode();
+                    });
+                </script>
             </div>
         </section>
 
@@ -2506,7 +2713,14 @@
                         <li><a href="bookmarks.html">🔖 Bookmarks</a></li>
                         <li><a href="progress-dashboard.html">📊 Dashboard</a></li>
                         <li><a href="changelog-viewer.html">📝 Changelog</a></li>
-                    
+                        <li><a href="animations.html">🎨 Animations</a></li>
+                        <li><a href="regex-tester.html">🔤 Regex Tester</a></li>
+                        <li><a href="color-converter.html">🎨 Color Converter</a></li>
+                        <li><a href="design-patterns.html">📐 Design Patterns</a></li>
+                        <li><a href="api-reference.html">📡 Web APIs</a></li>
+                        <li><a href="flashcards.html">🃏 Flashcards</a></li>
+                        <li><a href="shortcuts.html">⌨️ Shortcuts</a></li>
+                        <li><a href="projects.html">📂 Projects</a></li>
                         <li><a href="compare.html">Framework Comparison</a></li>
                         <li><a href="roadmap-detail.html">Detailed Roadmap</a></li>
                         <li><a href="snippets.html">Code Snippets</a></li>
@@ -2552,7 +2766,7 @@
             </div>
 
             <div class="footer-bottom">
-                <div class="footer-badge">v3.0 Premium Edition</div>
+                <div class="footer-badge">v3.4 Premium Edition</div>
                 <p>&copy; 2026 Sanskar Yadav. All rights reserved.</p>
                 <p>Made with ❤️ in India 🇮🇳</p>
                 <button onclick="openDonate()" class="btn btn-donate"
