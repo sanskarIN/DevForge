@@ -1,4 +1,4 @@
-# 🚀 Web Development Mastery — Complete Web Development Learning Platform
+# 🚀 DevForge — Complete Web Development Learning Platform
 
 ### HTML · CSS · JavaScript · React — 500+ Concepts | By Sanskar Developer
 
@@ -71,7 +71,7 @@ This platform requires **no compilation, no server setup, and no dependencies**.
 
 ## 🗺️ Project Architecture & Design Philosophy
 
-The architecture of **Web Development Mastery** follows a strict **offline-first, zero-build, static execution model**. The goal of this design is to make the entire interactive experience instantly run when opened from local files, while still supporting advanced features such as code editing, live preview, progress importing/exporting, custom theme generation, and speech synthesis.
+The architecture of **DevForge** follows a strict **offline-first, zero-build, static execution model**. The goal of this design is to make the entire interactive experience instantly run when opened from local files, while still supporting advanced features such as code editing, live preview, progress importing/exporting, custom theme generation, and speech synthesis.
 
 ### Zero-Build client-side Architecture
 The project does not rely on bundlers (Webpack, Vite, Rollup) or runtime environments (Node.js, Express) for its core user experience. Instead, it utilizes standard web elements:
@@ -110,7 +110,7 @@ These scripts ensure that any modifications to the styling or logic can be devel
 The project directory consists of a collection of web documents, scripts, stylesheets, and vector assets. Below is a detailed breakdown of every single file within the directory.
 
 ```
-Web Development Mastery/
+DevForge/
 │
 ├── HTML Mastery.html                    # The main user interface & markup framework
 ├── Using JS for HTML Mastery.js          # Main logic, datasets, playground, state managers
@@ -547,7 +547,7 @@ The platform includes 27 preset themes. Below is a detailed mapping of their col
 The application includes several secondary HTML files that handle specific pages, support flows, and information. These pages match the main application's theme structure and support responsive layouts.
 
 ### 1. About Portal (`about.html`)
-The page [about.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/Web Development Mastery/about.html) provides information about the developer and the project's goals.
+The page [about.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/DevForge/about.html) provides information about the developer and the project's goals.
 - **Visual Design**: Sleek dark/light theme, modern typography, grid layouts, and cards explaining the developer's journey.
 - **Sections**:
   - **Developer Profile**: Introduction to Sanskar Yadav (Full-Stack Developer & Educator).
@@ -557,7 +557,7 @@ The page [about.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/
 - **Theme toggle**: Includes a theme toggle button that stores the user's preference in `localStorage`.
 
 ### 2. Developer Documentation Hub (`developer.html`)
-Located at [developer.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/Web Development Mastery/developer.html), this file serves as the documentation portal for contributors.
+Located at [developer.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/DevForge/developer.html), this file serves as the documentation portal for contributors.
 - **Visual Design**: Features dark and light themes, sidebar layout for navigation, responsive content cards, and styled code snippets.
 - **Sections**:
   - **Getting Started**: Steps to run the project locally.
@@ -567,7 +567,7 @@ Located at [developer.html](file:///e:/All the Projects of the Sanskar/SANSKAR F
 - **Branding logo**: Displays `html_logo.svg`.
 
 ### 3. Privacy Policy (`privacy.html`)
-The file [privacy.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/Web Development Mastery/privacy.html) outlines data handling policies.
+The file [privacy.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/DevForge/privacy.html) outlines data handling policies.
 - **Visual Design**: Minimalist reading layout, clear headings, custom lists, and a theme switcher.
 - **Privacy Policy Details**:
   - **Data Collection**: No personal data is collected or sent to servers.
@@ -576,7 +576,7 @@ The file [privacy.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folde
 - **Branding logo**: Displays `privacy_logo.svg`.
 
 ### 4. Support and FAQ Portal (`support.html`)
-Located at [support.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/Web Development Mastery/support.html), this page handles user inquiries and reports.
+Located at [support.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/DevForge/support.html), this page handles user inquiries and reports.
 - **Visual Design**: Grid-based FAQ layout, contact card designs, and a bug-reporting form.
 - **Sections**:
   - **Frequently Asked Questions**: Details about progress saving, offline capabilities, and licensing.
@@ -585,7 +585,7 @@ Located at [support.html](file:///e:/All the Projects of the Sanskar/SANSKAR Fol
 - **Branding logo**: Displays `support_logo.svg`.
 
 ### 5. Terms of Service (`terms.html`)
-The document [terms.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/Web Development Mastery/terms.html) lists platform terms and usage policies.
+The document [terms.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/DevForge/terms.html) lists platform terms and usage policies.
 - **Visual Design**: Clean typography, readable paragraph structures, and matching styling.
 - **Terms Details**:
   - **Educational Purpose**: The platform is intended for learning purposes.
@@ -594,15 +594,15 @@ The document [terms.html](file:///e:/All the Projects of the Sanskar/SANSKAR Fol
 - **Branding logo**: Displays `terms_logo.svg`.
 
 ### 6. Acknowledgements Page (`thanks.html`)
-The file [thanks.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/Web Development Mastery/thanks.html) displays donation details and acknowledgments.
+The file [thanks.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/DevForge/thanks.html) displays donation details and acknowledgments.
 - **Visual Design**: Card layouts, donation buttons, payment qr guides, and custom styling.
 - **Content**:
   - **Thank You message**: Expressing gratitude to community members and donors.
   - **Contribution Methods**: Information on how to support the developer.
-  - **Payment Integration**: Renders [Payment-Ramsandesh.jpeg](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/Web Development Mastery/Payment-Ramsandesh.jpeg) dynamically inside the UI.
+  - **Payment Integration**: Renders [Payment-Ramsandesh.jpeg](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/DevForge/Payment-Ramsandesh.jpeg) dynamically inside the UI.
 
 ### 7. Custom Fallback Page (`404.html`)
-Located at [404.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/Web Development Mastery/404.html), this page handles missing routes.
+Located at [404.html](file:///e:/All the Projects of the Sanskar/SANSKAR Folder/DevForge/404.html), this page handles missing routes.
 - **Visual Design**: Animated layout with dark themes, centralized content, and a stylized 404 message.
 - **Content**:
   - **Error explanation**: Explains that the requested URL does not exist on the platform.
@@ -709,7 +709,7 @@ To document a new tag, follow these steps:
 
 ### How to Add a New Theme
 To add a new preset theme:
-1. Open the [script.js](https://wwww.github.com/sanskarIN/Web-Development-Mastery/blob/main/HTML/script.js) file.
+1. Open the [script.js](https://wwww.github.com/sanskarIN/DevForge/blob/main/HTML/script.js) file.
 2. Locate the global `PRESET_THEMES` array.
 3. Insert a theme object matching the variable scheme:
    ```javascript
@@ -851,11 +851,11 @@ To create custom themes, use the custom theme builder:
 To run the application locally:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/sanskarIN/Web-Development-Mastery.git
+   git clone https://github.com/sanskarIN/DevForge.git
    ```
 2. Navigate to the directory:
    ```bash
-   cd "Web Development Mastery"
+   cd "DevForge"
    ```
 3. Open `index.html` in your browser.
 
