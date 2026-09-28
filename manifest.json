@@ -1,7 +1,7 @@
 {
-  "name": "Web Development Mastery",
+  "name": "DevForge",
   "short_name": "WDM",
-  "description": "Web Development Mastery Project",
+  "description": "DevForge Project",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0b0f19",
