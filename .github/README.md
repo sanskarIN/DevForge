@@ -1,13 +1,13 @@
-# Web Development Mastery
+# DevForge
 
-![GitHub stars](https://img.shields.io/github/stars/sanskarIN/Web-Development-Mastery?style=social)
-![GitHub forks](https://img.shields.io/github/forks/sanskarIN/Web-Development-Mastery?style=social)
-![GitHub issues](https://img.shields.io/github/issues/sanskarIN/Web-Development-Mastery)
-![GitHub license](https://img.shields.io/github/license/sanskarIN/Web-Development-Mastery)
+![GitHub stars](https://img.shields.io/github/stars/sanskarIN/DevForge?style=social)
+![GitHub forks](https://img.shields.io/github/forks/sanskarIN/DevForge?style=social)
+![GitHub issues](https://img.shields.io/github/issues/sanskarIN/DevForge)
+![GitHub license](https://img.shields.io/github/license/sanskarIN/DevForge)
 
 ## Overview
 
-Welcome to the **Web Development Mastery** repository! This project serves as a comprehensive guide and portfolio for mastering modern web technologies.
+Welcome to the **DevForge** repository! This project serves as a comprehensive guide and portfolio for mastering modern web technologies.
 
 ## Technology Stack
 
@@ -25,6 +25,6 @@ Welcome to the **Web Development Mastery** repository! This project serves as a 
 
 ## Contribution Stats
 
-![GitHub contributors](https://img.shields.io/github/contributors/sanskarIN/Web-Development-Mastery)
+![GitHub contributors](https://img.shields.io/github/contributors/sanskarIN/DevForge)
 
 Thank you to all our contributors!
