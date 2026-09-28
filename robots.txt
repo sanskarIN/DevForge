@@ -1,12 +1,12 @@
 # https://www.robotstxt.org/robotstxt.html
-# Robots.txt for Web Development Mastery
+# Robots.txt for DevForge
 
 User-agent: *
 Allow: /
 Crawl-delay: 10
 
 # Sitemap location
-Sitemap: https://sanskarin.github.io/Web-Development-Mastery/sitemap.xml
+Sitemap: https://sanskarin.github.io/DevForge/sitemap.xml
 
 # Allow all crawlers access to all content
 # This is an open-source educational platform
