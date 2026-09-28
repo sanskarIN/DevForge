@@ -5522,6 +5522,33 @@ const PRESET_THEMES = [
     </code></pre>
         `
     }
+,
+  {
+        id: "prop-scroll-snap",
+        title: "scroll-snap",
+        badge: "SCROLL",
+        emoji: "📜",
+        demoHTML: `<div class="demo-text" style="padding:20px;text-align:center;">Demo: scroll-snap</div>`,
+        content: `
+
+    <h3>📌 Deep Dive: Advanced Concept</h3>
+    <p>The <code>scroll-snap</code> property/feature is a modern CSS capability that enables developers to create more powerful, maintainable, and performant stylesheets. It represents the cutting edge of CSS evolution.</p>
+    <h4>⚙️ Under the Hood</h4>
+    <p>When the browser processes <code>scroll-snap</code>, the rendering engine creates optimized paint and composite layers. This modern CSS feature leverages hardware acceleration where possible for smooth, jank-free rendering.</p>
+    <div class="cb">
+      <div class="cb-h"><span>💡 Pro Tip & Best Practice</span></div>
+      <div class="cb-b"><p>Use <code>scroll-snap</code> with progressive enhancement in mind. Always provide fallbacks for browsers that don't yet support this feature. Check caniuse.com for current browser support.</p></div>
+    </div>
+    <h4>💻 Advanced Implementation Example</h4>
+    <pre><code class="language-css">
+/* Using scroll-snap */
+.example {
+    /* scroll-snap implementation */
+    /* Check the interactive demo panel for live usage! */
+}
+    </code></pre>
+        `
+    }
 
 ];
 
