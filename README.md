@@ -58,6 +58,11 @@ This platform requires **no compilation, no server setup, and no dependencies**.
 | 📐 **Project Ideas** | 25+ project ideas with difficulty levels and tech tags |
 | ♿ **A11y Checker** | Paste HTML and get instant accessibility audit with scores |
 | ⚡ **Performance Guide** | Optimization techniques with code examples and score simulator |
+| 🧩 **Design Patterns** | 15+ JS patterns: Singleton, Factory, Observer, Strategy, and more |
+| 🔤 **Regex Tester** | Interactive regex testing with real-time highlighting and presets |
+| 🎨 **Color Converter** | HEX/RGB/HSL converter, palette generator, WCAG contrast checker |
+| 📡 **Web APIs** | Quick reference for DOM, Fetch, Canvas, Storage, and 12+ browser APIs |
+| 🎬 **CSS Animations** | Live animation playground with presets, controls, and CSS output |
 | ⚙️ **CI/CD** | GitHub Actions for deployment and linting |
 | ♿ **Accessibility** | ARIA labels, skip nav, heading hierarchy fixes |
 
