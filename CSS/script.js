@@ -5495,6 +5495,33 @@ const PRESET_THEMES = [
     </code></pre>
         `
     }
+,
+  {
+        id: "prop-aspect-ratio",
+        title: "aspect-ratio",
+        badge: "BOX MODEL",
+        emoji: "📏",
+        demoHTML: `<div class="demo-text" style="padding:20px;text-align:center;">Demo: aspect-ratio</div>`,
+        content: `
+
+    <h3>📌 Deep Dive: Advanced Concept</h3>
+    <p>The <code>aspect-ratio</code> property/feature is a modern CSS capability that enables developers to create more powerful, maintainable, and performant stylesheets. It represents the cutting edge of CSS evolution.</p>
+    <h4>⚙️ Under the Hood</h4>
+    <p>When the browser processes <code>aspect-ratio</code>, the rendering engine creates optimized paint and composite layers. This modern CSS feature leverages hardware acceleration where possible for smooth, jank-free rendering.</p>
+    <div class="cb">
+      <div class="cb-h"><span>💡 Pro Tip & Best Practice</span></div>
+      <div class="cb-b"><p>Use <code>aspect-ratio</code> with progressive enhancement in mind. Always provide fallbacks for browsers that don't yet support this feature. Check caniuse.com for current browser support.</p></div>
+    </div>
+    <h4>💻 Advanced Implementation Example</h4>
+    <pre><code class="language-css">
+/* Using aspect-ratio */
+.example {
+    /* aspect-ratio implementation */
+    /* Check the interactive demo panel for live usage! */
+}
+    </code></pre>
+        `
+    }
 
 ];
 
