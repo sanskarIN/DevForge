@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API Reference</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="splash.png">
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --text: #f8fafc;
+            --accent1: #6c63ff;
+            --accent2: #3ecfcf;
+            --surface: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem; max-width: 1200px; margin: 0 auto; }
+        h1 { text-align: center; margin-bottom: 2rem; background: linear-gradient(45deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .search-bar { width: 100%; padding: 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); outline: none; margin-bottom: 2rem; font-size: 1.1rem; }
+        .accordion { display: flex; flex-direction: column; gap: 1rem; }
+        .accordion-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; backdrop-filter: blur(10px); }
+        .accordion-header { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); transition: 0.2s; }
+        .accordion-header:hover { background: rgba(0,0,0,0.4); }
+        .accordion-header h2 { font-size: 1.25rem; }
+        .badges { display: flex; gap: 0.5rem; }
+        .badge { font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.1); }
+        .accordion-content { padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s; }
+        .accordion-content.active { padding: 1.5rem; max-height: 1000px; }
+        pre { background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.95rem; border: 1px solid var(--border); margin: 1rem 0; color: #a5b4fc; }
+        p { margin-bottom: 0.5rem; line-height: 1.6; color: #cbd5e1; }
+        strong { color: var(--text); }
+        .use-cases { margin-top: 1rem; }
+        .use-cases ul { list-style-position: inside; color: #cbd5e1; }
+    </style>
+</head>
+<body>
+    <h1>Web APIs Reference</h1>
+    <input type="text" id="search" class="search-bar" placeholder="Search APIs..." onkeyup="filterApis()">
+    
+    <div class="accordion" id="apiList"></div>
+
+    <script>
+        const apis = [
+            {
+                name: 'Fetch API',
+                desc: 'Provides a JavaScript interface for accessing and manipulating parts of the protocol, such as requests and responses.',
+                support: ['Chrome 42+', 'Firefox 39+', 'Safari 10.1+'],
+                syntax: `fetch(resource, options)\n  .then(response => response.json())\n  .then(data => console.log(data));`,
+                uses: ['Making HTTP requests', 'Fetching remote JSON data', 'Uploading files']
+            },
+            {
+                name: 'Storage API (Local/Session)',
+                desc: 'Provides mechanisms by which browsers can store key/value pairs, in a much more intuitive fashion than using cookies.',
+                support: ['Chrome 4+', 'Firefox 3.5+', 'Safari 4+'],
+                syntax: `localStorage.setItem('key', 'value');\nconst val = localStorage.getItem('key');`,
+                uses: ['Saving user preferences', 'Caching application state', 'Shopping carts']
+            },
+            {
+                name: 'Geolocation API',
+                desc: 'Allows the user to provide their location to web applications if they so desire.',
+                support: ['Chrome 5+', 'Firefox 3.5+', 'Safari 5+'],
+                syntax: `navigator.geolocation.getCurrentPosition(position => {\n  console.log(position.coords.latitude, position.coords.longitude);\n});`,
+                uses: ['Mapping applications', 'Local search', 'Weather apps based on location']
+            },
+            {
+                name: 'Intersection Observer',
+                desc: 'Provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document viewport.',
+                support: ['Chrome 51+', 'Firefox 55+', 'Safari 12.2+'],
+                syntax: `const observer = new IntersectionObserver((entries) => {\n  entries.forEach(entry => {\n    if(entry.isIntersecting) { /* Element is visible */ }\n  });\n});\nobserver.observe(document.querySelector('.box'));`,
+                uses: ['Lazy loading images', 'Infinite scrolling', 'Ad visibility tracking']
+            },
+            {
+                name: 'Clipboard API',
+                desc: 'Provides the ability to respond to clipboard commands (cut, copy, and paste) as well as to asynchronously read from and write to the system clipboard.',
+                support: ['Chrome 66+', 'Firefox 63+', 'Safari 13.1+'],
+                syntax: `navigator.clipboard.writeText('Hello World')\n  .then(() => console.log('Copied!'));`,
+                uses: ['Copy to clipboard buttons', 'Reading pasted content safely']
+            },
+            {
+                name: 'Web Workers API',
+                desc: 'Makes it possible to run a script operation in a background thread separate from the main execution thread of a web application.',
+                support: ['Chrome 4+', 'Firefox 3.5+', 'Safari 4+'],
+                syntax: `const worker = new Worker('worker.js');\nworker.postMessage('Hello');\nworker.onmessage = (e) => console.log(e.data);`,
+                uses: ['Heavy computations', 'Image processing', 'Data parsing in background']
+            }
+        ];
+
+        function renderApis(filtered) {
+            const list = document.getElementById('apiList');
+            list.innerHTML = filtered.map((api, i) => \`
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAcc(\${i})">
+                        <h2>\${api.name}</h2>
+                        <div class="badges">
+                            \${api.support.map(s => \`<span class="badge">\${s}</span>\`).join('')}
+                        </div>
+                    </div>
+                    <div class="accordion-content" id="content-\${i}">
+                        <p><strong>Description:</strong> \${api.desc}</p>
+                        <pre><code>\${api.syntax}</code></pre>
+                        <div class="use-cases">
+                            <strong>Common Use Cases:</strong>
+                            <ul>
+                                \${api.uses.map(u => \`<li>\${u}</li>\`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            \`).join('');
+        }
+
+        function filterApis() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const filtered = apis.filter(api => 
+                api.name.toLowerCase().includes(query) || 
+                api.desc.toLowerCase().includes(query)
+            );
+            renderApis(filtered);
+        }
+
+        let openIndex = null;
+        function toggleAcc(index) {
+            const el = document.getElementById(\`content-\${index}\`);
+            if (openIndex !== null && openIndex !== index) {
+                document.getElementById(\`content-\${openIndex}\`).classList.remove('active');
+            }
+            el.classList.toggle('active');
+            openIndex = el.classList.contains('active') ? index : null;
+        }
+
+        renderApis(apis);
+    </script>
+</body>
+</html>
