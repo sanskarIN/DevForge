@@ -6,6 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [3.4.0] — 2026-09-28
+
+### 🆕 New Feature Pages
+- **Design Patterns** (`design-patterns.html`) — 15+ JavaScript patterns: Singleton, Factory, Observer, Strategy, Decorator, and more
+- **Regex Tester** (`regex-tester.html`) — Interactive regex testing with real-time highlighting, preset patterns, and cheat sheet
+- **Color Converter** (`color-converter.html`) — HEX/RGB/HSL conversion, palette generator, WCAG contrast checker
+- **Web APIs Reference** (`api-reference.html`) — Quick reference for DOM, Fetch, Storage, Canvas, Web Workers, and 12+ browser APIs
+- **CSS Animations** (`animations.html`) — Live animation playground with presets, timing controls, and CSS output
+
+### 📄 HTML Module — 10 New Concepts
+- `<dialog>`, `<details>/<summary>`, `<template>`, `<picture>`, `<datalist>`, `<meter>`, `<progress>`, `<output>`, `<mark>`, `<time>`
+
+### 🎨 CSS Module — 10 New Concepts
+- Container Queries, `:has()`, Subgrid, `accent-color`, `aspect-ratio`, Scroll Snap, `color-mix()`, `@layer`, `:is()/:where()`, View Transitions
+
+### 🏠 Landing Page Enhancements
+- **Live Code Preview** — Try It Yourself split-pane editor with live preview
+- **Enhanced Testimonials** — Auto-scrolling horizontal carousel with dot indicators
+- **Version bump** to v3.4
+- Updated footer with links to all new v3.4 pages
+
+---
+
 ## [3.3.0] — 2026-09-23
 
 ### 🆕 New Feature Pages
