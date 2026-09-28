@@ -117,6 +117,11 @@ Web-Development-Mastery/
 ├── projects.html           # Project ideas gallery
 ├── accessibility-checker.html # HTML A11y checker tool
 ├── performance.html        # Web performance guide
+├── design-patterns.html    # JavaScript design patterns
+├── regex-tester.html       # Interactive regex tester
+├── color-converter.html    # Color converter & palette tool
+├── api-reference.html      # Web APIs quick reference
+├── animations.html         # CSS animation playground
 ├── sitemap.xml             # XML sitemap
 ├── robots.txt              # Crawler directives
 ├── manifest.json           # PWA web app manifest
