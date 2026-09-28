@@ -5387,7 +5387,34 @@ const PRESET_THEMES = [
   { id: "ice", name: "Arctic Ice", bg: "#e0f2fe", bg2: "#ffffff", bg3: "#dcf0fd", bg4: "#cce6f8", text: "#082f49", text2: "#0c4a6e", text3: "#38bdf8", accent: "#0284c7", accent2: "#0284c7", accent3: "#fbbf24", border: "#0284c733", card: "#ffffff", codeBg: "#cce6f8", sbBg: "#e0f2fe", hdrBg: "linear-gradient(135deg,#cce6f8,#0284c7)" },
   { id: "lava", name: "Magma Lair", bg: "#220000", bg2: "#3a1010", bg3: "#2d0707", bg4: "#160000", text: "#ffebeb", text2: "#ffb0b0", text3: "#b35050", accent: "#ff3d3d", accent2: "#ffa600", accent3: "#ffff00", border: "#ff3d3d33", card: "#3a1010", codeBg: "#160000", sbBg: "#220000", hdrBg: "linear-gradient(135deg,#160000,#ff3d3d,#ffa600)" },
   { id: "discord", name: "Gamer Dark", bg: "#36393f", bg2: "#2f3136", bg3: "#32353b", bg4: "#202225", text: "#dcddde", text2: "#b9bbbe", text3: "#72767d", accent: "#5865F2", accent2: "#eb459f", accent3: "#fee75c", border: "#5865F233", card: "#2f3136", codeBg: "#202225", sbBg: "#36393f", hdrBg: "linear-gradient(135deg,#202225,#36393f,#5865F2)" },
-  { id: "rose", name: "Rose Pine", bg: "#191724", bg2: "#1f1d2e", bg3: "#1c1a29", bg4: "#121019", text: "#e0def4", text2: "#908caa", text3: "#6e6a86", accent: "#ebbcba", accent2: "#31748f", accent3: "#f6c177", border: "#ebbcba33", card: "#1f1d2e", codeBg: "#121019", sbBg: "#191724", hdrBg: "linear-gradient(135deg,#121019,#191724,#1f1d2e)" }
+  { id: "rose", name: "Rose Pine", bg: "#191724", bg2: "#1f1d2e", bg3: "#1c1a29", bg4: "#121019", text: "#e0def4", text2: "#908caa", text3: "#6e6a86", accent: "#ebbcba", accent2: "#31748f", accent3: "#f6c177", border: "#ebbcba33", card: "#1f1d2e", codeBg: "#121019", sbBg: "#191724", hdrBg: "linear-gradient(135deg,#121019,#191724,#1f1d2e)" },
+  {
+        id: "prop-container-queries",
+        title: "container queries",
+        badge: "LAYOUT",
+        emoji: "📦",
+        demoHTML: `<div class="demo-text" style="padding:20px;text-align:center;">Demo: container queries</div>`,
+        content: `
+
+    <h3>📌 Deep Dive: Advanced Concept</h3>
+    <p>The <code>@container</code> property/feature is a modern CSS capability that enables developers to create more powerful, maintainable, and performant stylesheets. It represents the cutting edge of CSS evolution.</p>
+    <h4>⚙️ Under the Hood</h4>
+    <p>When the browser processes <code>@container</code>, the rendering engine creates optimized paint and composite layers. This modern CSS feature leverages hardware acceleration where possible for smooth, jank-free rendering.</p>
+    <div class="cb">
+      <div class="cb-h"><span>💡 Pro Tip & Best Practice</span></div>
+      <div class="cb-b"><p>Use <code>@container</code> with progressive enhancement in mind. Always provide fallbacks for browsers that don't yet support this feature. Check caniuse.com for current browser support.</p></div>
+    </div>
+    <h4>💻 Advanced Implementation Example</h4>
+    <pre><code class="language-css">
+/* Using @container */
+.example {
+    /* @container implementation */
+    /* Check the interactive demo panel for live usage! */
+}
+    </code></pre>
+        `
+    }
+
 ];
 
 // UI Interactions
