@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Regex Tester</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="splash.png">
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --text: #f8fafc;
+            --accent1: #6c63ff;
+            --accent2: #3ecfcf;
+            --surface: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding: 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 2rem; min-height: 100vh; }
+        @media (max-width: 768px) { body { grid-template-columns: 1fr; } }
+        h1, h2 { background: linear-gradient(45deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+        .main-panel { display: flex; flex-direction: column; gap: 1.5rem; }
+        .input-group { background: var(--surface); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); backdrop-filter: blur(10px); }
+        .regex-input-container { display: flex; align-items: center; gap: 0.5rem; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.5rem 1rem; border: 1px solid var(--border); font-family: monospace; font-size: 1.2rem; }
+        .regex-input-container input[type="text"] { flex: 1; background: transparent; border: none; color: var(--accent2); font-family: monospace; font-size: 1.2rem; outline: none; }
+        .flags { display: flex; gap: 0.5rem; }
+        .flag-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.25rem 0.5rem; border-radius: 4px; cursor: pointer; }
+        .flag-btn.active { background: var(--accent1); border-color: var(--accent1); }
+        textarea { width: 100%; height: 200px; background: rgba(0,0,0,0.3); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; font-family: monospace; font-size: 1rem; resize: vertical; outline: none; }
+        .results { background: var(--surface); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); min-height: 200px; }
+        .match-item { background: rgba(255,255,255,0.05); margin-bottom: 0.5rem; padding: 0.75rem; border-radius: 6px; border-left: 4px solid var(--accent2); }
+        .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+        .presets, .cheatsheet { background: var(--surface); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); backdrop-filter: blur(10px); }
+        .preset-btn { display: block; width: 100%; text-align: left; background: rgba(0,0,0,0.2); border: 1px solid var(--border); color: var(--text); padding: 0.5rem; margin-bottom: 0.5rem; border-radius: 4px; cursor: pointer; transition: 0.2s; }
+        .preset-btn:hover { background: rgba(255,255,255,0.1); }
+        .highlight { background-color: rgba(62, 207, 207, 0.4); border-radius: 2px; }
+        .highlighter-container { position: relative; margin-top: 1rem; }
+        .backdrop { position: absolute; z-index: 1; border: 1px solid transparent; padding: 1rem; font-family: monospace; font-size: 1rem; white-space: pre-wrap; word-wrap: break-word; color: transparent; pointer-events: none; width: 100%; height: 100%; }
+        textarea { position: relative; z-index: 2; background: transparent; }
+        code { font-family: monospace; color: var(--accent1); }
+    </style>
+</head>
+<body>
+    <div class="main-panel">
+        <h1>Interactive Regex Tester</h1>
+        <div class="input-group">
+            <label style="display: block; margin-bottom: 0.5rem;">Regular Expression</label>
+            <div class="regex-input-container">
+                <span>/</span>
+                <input type="text" id="regex" value="[a-z]+" oninput="update()">
+                <span>/</span>
+                <div class="flags" id="flags">
+                    <button class="flag-btn active" onclick="toggleFlag('g')">g</button>
+                    <button class="flag-btn active" onclick="toggleFlag('i')">i</button>
+                    <button class="flag-btn" onclick="toggleFlag('m')">m</button>
+                    <button class="flag-btn" onclick="toggleFlag('s')">s</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label style="display: block; margin-bottom: 0.5rem;">Test String</label>
+            <div class="highlighter-container">
+                <div class="backdrop" id="backdrop"></div>
+                <textarea id="testString" oninput="update()" onscroll="syncScroll()">Welcome to the regex tester!
+Test numbers: 123 456
+Test email: example@test.com
+https://example.com</textarea>
+            </div>
+        </div>
+
+        <div class="results">
+            <h2>Match Results (<span id="matchCount">0</span>)</h2>
+            <div id="resultsList"></div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="presets">
+            <h2>Presets</h2>
+            <div id="presetList"></div>
+        </div>
+        <div class="cheatsheet">
+            <h2>Cheat Sheet</h2>
+            <p><code>.</code> Any character</p>
+            <p><code>\d</code> Digit</p>
+            <p><code>\w</code> Word char</p>
+            <p><code>\s</code> Whitespace</p>
+            <p><code>^</code> Start of string</p>
+            <p><code>$</code> End of string</p>
+            <p><code>*</code> 0 or more</p>
+            <p><code>+</code> 1 or more</p>
+            <p><code>?</code> 0 or 1</p>
+            <p><code>(a|b)</code> a or b</p>
+        </div>
+    </div>
+
+    <script>
+        let activeFlags = new Set(['g', 'i']);
+        
+        const presets = {
+            'Email': { regex: '^[^\\\\s@]+@[^\\\\s@]+\\\\.[^\\\\s@]+$', flags: ['g', 'i'] },
+            'URL': { regex: 'https?:\\\\/\\\\/(www\\\\.)?[-a-zA-Z0-9@:%._\\\\+~#=]{1,256}\\\\.[a-zA-Z0-9()]{1,6}\\\\b([-a-zA-Z0-9()@:%_\\\\+.~#?&//=]*)', flags: ['g'] },
+            'Phone': { regex: '\\\\+?[1-9]\\\\d{1,14}', flags: ['g'] },
+            'IPv4': { regex: '\\\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\b', flags: ['g'] },
+            'Date (YYYY-MM-DD)': { regex: '\\\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\\\d|3[01])', flags: ['g'] },
+            'Hex Color': { regex: '#?([a-f0-9]{6}|[a-f0-9]{3})', flags: ['g', 'i'] },
+            'HTML Tag': { regex: '<([a-z]+)([^<]+)*(?:>(.*)<\\\\/\\\\1>|\\\\s+\\\\/>)', flags: ['g', 'i'] },
+            'Time (HH:MM)': { regex: '^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$', flags: ['g'] },
+            'Alphanumeric': { regex: '^[a-zA-Z0-9]*$', flags: ['g'] },
+            'Slug': { regex: '^[a-z0-9-]+$', flags: ['g'] }
+        };
+
+        function initPresets() {
+            const list = document.getElementById('presetList');
+            for (let [name, data] of Object.entries(presets)) {
+                list.innerHTML += \`<button class="preset-btn" onclick="loadPreset('\${name}')">\${name}</button>\`;
+            }
+        }
+
+        function loadPreset(name) {
+            const p = presets[name];
+            document.getElementById('regex').value = p.regex;
+            activeFlags = new Set(p.flags);
+            document.querySelectorAll('.flag-btn').forEach(btn => {
+                const flag = btn.textContent;
+                btn.className = \`flag-btn \${activeFlags.has(flag) ? 'active' : ''}\`;
+            });
+            update();
+        }
+
+        function toggleFlag(flag) {
+            if (activeFlags.has(flag)) activeFlags.delete(flag);
+            else activeFlags.add(flag);
+            event.target.classList.toggle('active');
+            update();
+        }
+
+        function syncScroll() {
+            const ta = document.getElementById('testString');
+            const bd = document.getElementById('backdrop');
+            bd.scrollTop = ta.scrollTop;
+            bd.scrollLeft = ta.scrollLeft;
+        }
+
+        function escapeHTML(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function update() {
+            const regexStr = document.getElementById('regex').value;
+            const text = document.getElementById('testString').value;
+            const flagsStr = Array.from(activeFlags).join('');
+            const bd = document.getElementById('backdrop');
+            const results = document.getElementById('resultsList');
+            const count = document.getElementById('matchCount');
+
+            if (!regexStr) {
+                bd.innerHTML = escapeHTML(text);
+                results.innerHTML = '';
+                count.textContent = '0';
+                return;
+            }
+
+            try {
+                const regex = new RegExp(regexStr, flagsStr);
+                let match;
+                let html = '';
+                let lastIndex = 0;
+                let matchData = [];
+
+                if (!flagsStr.includes('g')) {
+                    match = regex.exec(text);
+                    if (match) {
+                        html = escapeHTML(text.slice(0, match.index)) + 
+                               '<mark class="highlight">' + escapeHTML(match[0]) + '</mark>' + 
+                               escapeHTML(text.slice(match.index + match[0].length));
+                        matchData.push(match);
+                    } else {
+                        html = escapeHTML(text);
+                    }
+                } else {
+                    let textCopy = text;
+                    let matches = [];
+                    while ((match = regex.exec(text)) !== null) {
+                        matches.push(match);
+                        if (match.index === regex.lastIndex) regex.lastIndex++;
+                    }
+                    
+                    for (let m of matches) {
+                        html += escapeHTML(text.substring(lastIndex, m.index));
+                        html += '<mark class="highlight">' + escapeHTML(m[0]) + '</mark>';
+                        lastIndex = m.index + m[0].length;
+                        matchData.push(m);
+                    }
+                    html += escapeHTML(text.substring(lastIndex));
+                }
+
+                bd.innerHTML = html;
+                count.textContent = matchData.length;
+                
+                results.innerHTML = matchData.map((m, i) => {
+                    let groups = '';
+                    if (m.length > 1) {
+                        groups = '<div><small style="color:var(--accent1)">Groups:</small></div>';
+                        for(let j=1; j<m.length; j++) {
+                            groups += \`<div><small>$\${j}: \${escapeHTML(m[j] || 'undefined')}</small></div>\`;
+                        }
+                    }
+                    return \`
+                        <div class="match-item">
+                            <strong>Match \${i+1}</strong> (Index: \${m.index})
+                            <div><code style="color: #e2e8f0">\${escapeHTML(m[0])}</code></div>
+                            \${groups}
+                        </div>
+                    \`;
+                }).join('');
+                
+            } catch (e) {
+                bd.innerHTML = escapeHTML(text);
+                results.innerHTML = \`<div style="color: #ef4444">Invalid Regular Expression: \${e.message}</div>\`;
+                count.textContent = 'Error';
+            }
+        }
+
+        initPresets();
+        update();
+    </script>
+</body>
+</html>
