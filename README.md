@@ -1,8 +1,8 @@
 # 🚀 DevForge — Complete Web Development Learning Platform
 
-### HTML · CSS · JavaScript · React — 500+ Concepts | By Sanskar Developer
+### HTML · CSS · JavaScript · React · Python — 600+ Concepts | By Sanskar Developer
 
-A premium, state-of-the-art interactive learning platform designed to help developers master **HTML** (100+ tags), **CSS** (200 properties), **JavaScript** (100 concepts), and **React** (100+ concepts) through in-depth explanations, real-time code execution, live sandboxes, persistent progress tracking, gamified mechanics, quiz systems, and premium dark UI with 25+ themes.
+A premium, state-of-the-art interactive learning platform designed to help developers master **HTML** (100+ tags), **CSS** (200 properties), **JavaScript** (100 concepts), **React** (100+ concepts), and **Python** (30+ concepts) through in-depth explanations, real-time code execution, live sandboxes, persistent progress tracking, gamified mechanics, quiz systems, and premium dark UI with 25+ themes.
 
 This platform requires **no compilation, no server setup, and no dependencies**. It operates entirely in the client browser using vanilla technologies (HTML5, JavaScript, CSS3), making it lightweight, easily shareable, and highly responsive.
 
@@ -63,6 +63,7 @@ This platform requires **no compilation, no server setup, and no dependencies**.
 | 🎨 **Color Converter** | HEX/RGB/HSL converter, palette generator, WCAG contrast checker |
 | 📡 **Web APIs** | Quick reference for DOM, Fetch, Canvas, Storage, and 12+ browser APIs |
 | 🎬 **CSS Animations** | Live animation playground with presets, controls, and CSS output |
+| 🐍 **Python Module** | 30+ concepts: OOP, async, decorators, generators, pattern matching, and more |
 | ⚙️ **CI/CD** | GitHub Actions for deployment and linting |
 | ♿ **Accessibility** | ARIA labels, skip nav, heading hierarchy fixes |
 
