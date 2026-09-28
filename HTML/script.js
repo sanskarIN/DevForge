@@ -6190,7 +6190,28 @@ const FLASHCARDS = [
   { f: "How do you create a line break?", b: "<br>" },
   { f: "Which attribute opens a link in a new tab?", b: 'target="_blank"' },
   { f: "What tag is used for a numbered list?", b: "<ol>" },
-  { f: "Which tag embeds a video?", b: "<video>" }
+  { f: "Which tag embeds a video?", b: "<video>" },
+  {
+    id: "tag-dialog", title: 'The <dialog> Tag', badge: "INTERACTIVE", emoji: "💬", content: `
+
+    <h3>📌 Deep Dive: Advanced Concept</h3>
+    <p>The <code>&lt;dialog&gt;</code> element is a powerful semantic HTML5 element that enables developers to create more meaningful, accessible, and interactive web pages without relying on JavaScript workarounds.</p>
+    <h4>⚙️ Under the Hood</h4>
+    <p>When the browser parses the <code>&lt;dialog&gt;</code> tag, it constructs a corresponding DOM node with built-in behaviors and ARIA roles. Modern browsers provide native styling and interaction patterns, reducing the need for custom JavaScript implementations.</p>
+    <div class="cb">
+      <div class="cb-h"><span>💡 Pro Tip & Best Practice</span></div>
+      <div class="cb-b"><p>Always use semantic HTML elements like <code>&lt;dialog&gt;</code> when available instead of building custom solutions with divs and JavaScript. This improves accessibility, reduces code complexity, and leverages browser-native optimizations.</p></div>
+    </div>
+    <h4>💻 Advanced Implementation Example</h4>
+    <pre><code class="language-html">
+&lt;!-- Using the dialog element --&gt;
+&lt;dialog&gt;
+  &lt;!-- Content goes here --&gt;
+&lt;/dialog&gt;
+    </code></pre>
+    `
+  }
+
 ];
 
 // ===== MASTERY LOGIC =====
