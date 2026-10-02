@@ -1,0 +1,1749 @@
+<!-- index.html -->
+<!-- The open source HTML tags guide -->
+<!-- See the source code at https://github.com/sanskarIN/DevForge -->
+<!-- Read about this project at the https://raw.githubusercontent.com/sanskarIN/DevForge/main/README.md -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <!-- added-meta: true -->
+    <meta name='robots' content='index, follow'>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description"
+    content="Comprehensive guide to TypeScript concepts with in-depth explanations, live code examples, copy-ready snippets, and 25+ premium themes — by Sanskar Developer." />
+  <meta name="keywords"
+    content="HTML tags, HTML reference, HTML tutorial, web development, HTML5, semantic HTML, Sanskar Developer" />
+  <meta name="author" content="Sanskar Yadav" />
+  <meta name="robots" content="index, follow" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0a0a1a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f0f0f8" media="(prefers-color-scheme: light)" />
+  <!-- Apple / iOS specific -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TypeScript Mastery Guide" />
+  <meta name="format-detection" content="telephone=no" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Deep Dive into TypeScript Mastery — Sanskar Developer" />
+    <meta property="og:url" content="https://sanskarin.github.io/DevForge/TypeScript/index.html">
+  <meta property="og:description"
+    content="TypeScript concepts explained in-depth with live examples, copy-ready code snippets, and 25+ premium themes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Deep Dive into TypeScript Mastery — Sanskar Developer" />
+  <meta name="twitter:description"
+    content="TypeScript concepts explained in-depth with live examples, copy-ready code snippets, and 25+ premium themes." />
+  <!-- Favicon: Inlined as base64 so it works when shared with anyone -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZmx1ZW50R3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDA4NkYwIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDVBOUUiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzSGlnaGxpZ2h0IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGRkZGRkYiIHN0b3Atb3BhY2l0eT0iMC4yIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGRkZGRkYiIHN0b3Atb3BhY2l0eT0iMC4wIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiByeD0iMjgiIGZpbGw9InVybCgjZmx1ZW50R3JhZGllbnQpIiAvPgogIAogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIHJ4PSIyOCIgZmlsbD0idXJsKCNnbGFzc0hpZ2hsaWdodCkiIC8+CgogIDx0ZXh0IHg9IjYwIiB5PSI2NiIgZm9udC1mYW1pbHk9IidTZWdvZSBVSScsIC1hcHBsZS1zeXN0ZW0sIFJvYm90bywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1MiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5TWTwvdGV4dD4KPC9zdmc+Cg==" />
+  <link rel="apple-touch-icon"
+    href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZmx1ZW50R3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDA4NkYwIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDVBOUUiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzSGlnaGxpZ2h0IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGRkZGRkYiIHN0b3Atb3BhY2l0eT0iMC4yIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGRkZGRkYiIHN0b3Atb3BhY2l0eT0iMC4wIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CgogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiByeD0iMjgiIGZpbGw9InVybCgjZmx1ZW50R3JhZGllbnQpIiAvPgogIAogIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIHJ4PSIyOCIgZmlsbD0idXJsKCNnbGFzc0hpZ2hsaWdodCkiIC8+CgogIDx0ZXh0IHg9IjYwIiB5PSI2NiIgZm9udC1mYW1pbHk9IidTZWdvZSBVSScsIC1hcHBsZS1zeXN0ZW0sIFJvYm90bywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1MiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5TWTwvdGV4dD4KPC9zdmc+Cg==" />
+  <link rel="canonical" href="https://sanskardeveloper.com/html-tags" />
+  <title>Deep Dive into TypeScript Mastery — 100 Tags Explained | Sanskar Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- CodeMirror Pro Editor -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/theme/monokai.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/fold/foldgutter.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/dialog/dialog.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/edit/closetag.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/edit/matchtags.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/selection/active-line.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/fold/foldcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/fold/foldgutter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/fold/brace-fold.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/fold/xml-fold.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/comment/comment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/search/searchcursor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/search/search.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/addon/dialog/dialog.min.js"></script>
+
+</head>
+
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <img src="../splash.png" alt="DevForge Logo" class="splash-logo">
+    <div class="splash-title">TypeScript Mastery</div>
+    <div class="splash-subtitle">Initializing Tag Explorer...</div>
+  </div>
+
+  <!-- Skip to Content Link for Accessibility -->
+  <a href="#content" class="skip-link" id="skipLink">Skip to main content</a>
+  <div id="progress-bar" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100"
+    aria-valuenow="0"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" role="complementary" aria-label="Tag navigation sidebar">
+    <div class="sb-head">
+      <svg role="img" aria-label="Sanskar Developer Logo" class="sb-logo" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 120 120"
+        style="width:40px;height:40px;border-radius:10px;border:2px solid var(--accent);padding:2px;">
+        <defs>
+          <linearGradient id="sb_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6c63ff" />
+            <stop offset="100%" stop-color="#3ecfcf" />
+          </linearGradient>
+          <linearGradient id="sb_code" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#e0e0ff" />
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="56" fill="url(#sb_bg)" stroke="#ffffff" stroke-width="2" /><text x="60" y="52"
+          text-anchor="middle" font-family="'Courier New', monospace" font-size="36" font-weight="bold"
+          fill="url(#sb_code)">&lt;/&gt;</text><text x="60" y="78" text-anchor="middle"
+          font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#ffffff"
+          letter-spacing="1">SANSKAR</text><text x="60" y="92" text-anchor="middle" font-family="'Segoe UI', sans-serif"
+          font-size="8" fill="#c0f0f0" letter-spacing="2">DEVELOPER</text>
+      </svg>
+      <span class="sb-title">TypeScript Mastery</span>
+      <button id="sbClose" class="sb-close" aria-label="Close sidebar">✕</button>
+    </div>
+    <label for="sbSearch" class="visually-hidden">Search tags</label>
+    <input type="search" id="sbSearch" placeholder="🔍 Search tags..." autocomplete="off" />
+    <label for="sbFilter" class="visually-hidden">Filter by category</label>
+    <select id="sbFilter"
+      style="margin:0 16px 12px;padding:10px 14px;background:var(--bg4);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;width:calc(100% - 32px);outline:none;cursor:pointer;transition:border-color 0.3s;">
+      <option value="ALL">All Categories</option>
+    </select>
+    <nav id="sbNav" aria-label="Tag list"></nav>
+    <div style="padding:16px;border-top:1px solid var(--border);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <span style="font-size:0.85rem;font-weight:bold;color:var(--text);">🎓 Mastery Progress</span>
+        <span style="font-size:0.85rem;color:var(--accent);font-weight:bold;"><span
+            id="sbMasteryCount">0</span>/100</span>
+      </div>
+      <div style="width:100%;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;">
+        <div id="masteryProgressBar"
+          style="width:0%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:4px;transition:width 0.4s;">
+        </div>
+      </div>
+    </div>
+    <div class="sb-footer">
+      <div style="margin: 0 0 14px; display: flex;">
+        <button onclick="openDonate()" class="top-donate-btn"
+          style="width: 100%; justify-content: center; padding: 8px 12px; font-size: 0.85rem; border-radius: 10px;">❤️
+          Donate Sanskar</button>
+      </div>
+      <div class="theme-wrap">
+        <span>Theme</span>
+        <button onclick="document.getElementById('themeModal').showModal()" class="theme-gallery-btn">Theme Gallery
+          🎨</button>
+      </div>
+      <div class="font-wrap">
+        <span>Font Size</span>
+        <div class="font-btns">
+          <button onclick="changeFontSize(-1)">A-</button>
+          <button onclick="changeFontSize(1)">A+</button>
+        </div>
+      </div>
+      <div
+        style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:center;">
+        <button onclick="exportProgress()"
+          style="background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:0.75rem;cursor:pointer;font-family:inherit;">📤
+          Export</button>
+        <button onclick="document.getElementById('importInput').click()"
+          style="background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:0.75rem;cursor:pointer;font-family:inherit;">📥
+          Import</button>
+        <input type="file" id="importInput" style="display:none" accept=".json" onchange="importProgress(event)">
+      </div>
+    </div>
+  </aside>
+
+  <!-- OVERLAY -->
+  <div id="overlay" onclick="toggleSidebar()" role="presentation"></div>
+
+  <!-- MAIN -->
+  <main id="mainWrap" role="main">
+    <button id="sbOpen" onclick="toggleSidebar()" aria-label="Open navigation sidebar" aria-expanded="false">☰</button>
+    <button class="top-donate-btn" onclick="openDonate()"
+      style="position: absolute; top: 16px; right: 20px; z-index: 999;">❤️ Donate</button>
+    <a href="../Follow-Sanskar.html" class="top-donate-btn"
+      style="position: absolute; top: 16px; right: 125px; z-index: 999; background: linear-gradient(135deg, #a78bfa, #3b82f6); color: white; text-decoration: none; box-shadow: 0 2px 10px rgba(167, 139, 250, 0.2);">✨ Follow Sanskar</a>
+      <div class="social-cluster-nav" style="display:inline-flex; gap:12px; margin-left:16px; align-items:center;">
+        <a href="https://www.youtube.com/@sanskarIN" target="_blank" style="color:var(--text2); transition:color 0.2s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='var(--text2)'" title="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://github.com/sanskarIN" target="_blank" style="color:var(--text2); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text2)'" title="GitHub"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+        <a href="https://www.linkedin.com/in/sanskarIN" target="_blank" style="color:var(--text2); transition:color 0.2s;" onmouseover="this.style.color='#0a66c2'" onmouseout="this.style.color='var(--text2)'" title="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://www.x.com/Sanskar_in" target="_blank" style="color:var(--text2); transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text2)'" title="X (Twitter)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+
+    <header>
+      <div class="logo-wrap">
+        <svg role="img" aria-label="Sanskar Developer Logo" class="hdr-logo" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="hdr_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6c63ff" />
+              <stop offset="100%" stop-color="#3ecfcf" />
+            </linearGradient>
+            <linearGradient id="hdr_code" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff" />
+              <stop offset="100%" stop-color="#e0e0ff" />
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="56" fill="url(#hdr_bg)" stroke="#ffffff" stroke-width="2" /><text x="60" y="52"
+            text-anchor="middle" font-family="'Courier New', monospace" font-size="36" font-weight="bold"
+            fill="url(#hdr_code)">&lt;/&gt;</text><text x="60" y="78" text-anchor="middle"
+            font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#ffffff"
+            letter-spacing="1">SANSKAR</text><text x="60" y="92" text-anchor="middle"
+            font-family="'Segoe UI', sans-serif" font-size="8" fill="#c0f0f0" letter-spacing="2">DEVELOPER</text>
+        </svg>
+        <div>
+          <div id="greetingWrap"
+            style="font-size:1.15rem; font-weight:600; color:var(--text); margin-bottom:4px; font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:0.5px;">
+          </div>
+          <h1>Deep Dive into TypeScript Mastery</h1>
+          <p><span id="totalTagsDesc">70</span> Tags Explained In-Depth with Examples &amp; Copy-Ready Code — by Sanskar
+          </p>
+        </div>
+      </div>
+      <div class="hdr-stats">
+        <div class="stat"><span class="stat-n" id="totalTagsStat">100</span><span class="stat-l">Tags</span></div>
+        <div class="stat"><span class="stat-n" id="masteryLevel">1</span><span class="stat-l">Level</span></div>
+        <div class="stat"><span class="stat-n" id="masteryCountStat">0</span><span class="stat-l">Mastered</span></div>
+        <div class="stat"
+          onclick="document.getElementById('sbFilter').value='FAVORITES'; applyFilters(); document.getElementById('sbFilter').scrollIntoView();"
+          style="cursor:pointer;" title="View your saved tags"><span class="stat-n" id="favCountStat">0</span><span
+            class="stat-l">Favorites</span></div>
+        <div class="stat" title="Estimated Reading Time"><span class="stat-n" id="readTime">--</span><span
+            class="stat-l">Min Read</span></div>
+        <div class="stat" onclick="openDonate()"
+          style="cursor:pointer; background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(239, 68, 68, 0.12)); border-color: rgba(245, 158, 11, 0.3); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.05);"
+          title="Support Sanskar's work!">
+          <span class="stat-n" style="color: #ef4444; font-size: 1.6rem; line-height: 1.1;">❤️</span>
+          <span class="stat-l" style="font-weight: 700; color: var(--text);">Donate</span>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:12px;position:relative;z-index:2;">
+        <span
+          style="font-size:0.8rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;">Rank:
+          <span id="masteryRank">Novice</span></span>
+      </div>
+      <!-- Tag of the Day -->
+      <div id="totDayCard" class="tot-day-card"
+        style="display:none;max-width:600px;margin:24px auto 0;padding:20px 24px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,var(--bg2)),color-mix(in srgb,var(--accent2) 10%,var(--bg2)));border:1px solid var(--border);border-radius:16px;text-align:center;position:relative;z-index:2;">
+        <h2 style="margin:0 0 6px;font-size:1.2rem;font-family:'Plus Jakarta Sans',sans-serif;">🌟 Tag of the Day</h2>
+        <p id="totDayText" style="margin:0 0 12px;color:var(--text2);font-size:0.9rem;"></p>
+        <button id="totDayBtn" onclick=""
+          style="background:var(--accent);color:#fff;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-weight:bold;font-family:inherit;">Go
+          to Tag ➔</button>
+      </div>
+      <div class="hdr-actions"
+        style="display:flex; gap:12px; margin-top:20px; flex-wrap:wrap; align-items:center; position:relative; z-index:999;">
+        <div id="google_translate_element" style="display:none;"></div>
+        <button type="button" class="action-btn" onclick="openTranslateModal()" title="Translate to another language"
+          style="background:var(--accent); color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:inherit; transition:0.2s; position:relative; z-index:1000; box-shadow:0 4px 10px rgba(0,0,0,0.2);">🌍
+          Translate</button>
+        <button type="button" class="action-btn" onclick="openQuiz(event)" title="Take a random quiz!"
+          style="background:color-mix(in srgb, var(--accent) 15%, transparent); color:var(--accent); border:1px solid var(--accent); padding:8px 16px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:inherit; transition:0.2s; position:relative; z-index:1000; box-shadow:0 4px 10px rgba(0,0,0,0.1);">🎯
+          Test Knowledge</button>
+        <button type="button" class="action-btn" onclick="openCheatSheet()" title="View all 100 tags at a glance"
+          style="background:color-mix(in srgb, var(--accent2) 15%, transparent); color:var(--accent2); border:1px solid var(--accent2); padding:8px 16px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:inherit; transition:0.2s; position:relative; z-index:1000;">📜
+          Cheat Sheet</button>
+        <button type="button" class="action-btn" onclick="openMasteryCenter()" title="Interview Prep & Flashcards"
+          style="background:color-mix(in srgb, var(--accent3) 15%, transparent); color:var(--accent3); border:1px solid var(--accent3); padding:8px 16px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:inherit; transition:0.2s; position:relative; z-index:1000;">🎓
+          Mastery Center</button>
+        <button type="button" class="action-btn" onclick="setTimeout(function(){ window.print(); }, 100);"
+          title="Print or Save as PDF"
+          style="background:color-mix(in srgb, var(--text) 10%, transparent); color:var(--text); border:1px solid var(--border); padding:8px 16px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:inherit; transition:0.2s; position:relative; z-index:1000; box-shadow:0 4px 10px rgba(0,0,0,0.1);">🖨️
+          Save as PDF</button>
+        <button type="button" id="zenBtn" onclick="toggleZenMode()" title="Toggle Focus Mode"
+          style="background:transparent; color:var(--text); border:1px solid var(--border); padding:8px 16px; border-radius:8px; font-weight:bold; cursor:pointer; font-family:inherit; transition:0.2s; position:relative; z-index:1000; box-shadow:0 4px 10px rgba(0,0,0,0.05);">👁️
+          Zen Mode</button>
+        <button type="button" onclick="document.getElementById('historyModal').showModal()"
+          title="HTML Evolution History"
+          style="background:transparent; color:var(--text); border:none; padding:8px; cursor:pointer; font-size:1.2rem; opacity:0.7; transition:0.2s;"
+          onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">📜</button>
+        <button type="button" onclick="document.getElementById('shortcutsModal').showModal()" title="Keyboard Shortcuts"
+          style="background:transparent; color:var(--text); border:none; padding:8px; cursor:pointer; font-size:1.2rem; opacity:0.7; transition:0.2s;"
+          onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">⌨️</button>
+      </div>
+    </header>
+<nav class="module-nav" style="display:flex;gap:12px;justify-content:center;padding:16px;background:rgba(108,99,255,0.1);border-radius:12px;margin:16px 0;flex-wrap:wrap;">
+  <a href="../HTML/index.html" style="padding:8px 20px;background:linear-gradient(135deg,#6c63ff,#5b54e6);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">📄 HTML</a>
+  <a href="../CSS/index.html" style="padding:8px 20px;background:linear-gradient(135deg,#3ecfcf,#2ba8a8);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">🎨 CSS</a>
+  <a href="../JavaScript/index.html" style="padding:8px 20px;background:linear-gradient(135deg,#f97316,#ea580c);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">⚡ JavaScript</a>
+  <a href="../React/index.html" style="padding:8px 20px;background:linear-gradient(135deg,#bf5af2,#9b30d1);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">⚛️ React</a>
+  <a href="../Python/index.html" style="padding:8px 20px;background:linear-gradient(135deg,#306998,#FFD43B);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">🐍 Python</a>
+  <a href="../TypeScript/index.html" style="padding:8px 20px;background:linear-gradient(135deg,#007acc,#005999);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">📘 TypeScript</a>
+  <a href="../index.html" style="padding:8px 20px;background:rgba(255,255,255,0.1);color:#f8fafc;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;border:1px solid rgba(255,255,255,0.2);">🏠 Home</a>
+</nav>
+
+    <!-- PLACEHOLDER: content sections will be here -->
+    <div id="content" role="region" aria-label="HTML tag reference content"></div>
+
+    <!-- ===== PREMIUM FOOTER ===== -->
+    <footer id="siteFooter"
+      style="background:var(--bg2); border-top:1px solid var(--border); margin-top:60px; font-family:'Inter','Plus Jakarta Sans',sans-serif;">
+
+      <!-- Main Footer Grid -->
+      <div
+        style="max-width:1300px; margin:0 auto; padding:48px 32px 32px; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:40px;">
+
+        <!-- Column 1: Brand & Social -->
+        <div>
+          <div
+            style="font-size:1.3rem; font-weight:800; color:var(--text); margin-bottom:6px; font-family:'Plus Jakarta Sans',sans-serif;">
+            🚀 Sanskar Yadav</div>
+          <p style="color:var(--text2); font-size:0.88rem; line-height:1.7; margin:0 0 20px;">Full-Stack Developer,
+            Creator & Educator. Building premium web experiences and sharing knowledge with the world.</p>
+
+          <div
+            style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--text2); margin-bottom:12px;">
+            Follow Sanskar on</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@sanskarIN" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex; align-items:center; gap:6px; padding:8px 14px; background:var(--bg3); border:1px solid var(--border); border-radius:10px; color:var(--text); text-decoration:none; font-size:0.82rem; font-weight:600; transition:all 0.2s;"
+              onmouseover="this.style.background='#ef4444';this.style.borderColor='#ef4444';this.style.color='#fff';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(239,68,68,0.4)'"
+              onmouseout="this.style.background='var(--bg3)';this.style.borderColor='var(--border)';this.style.color='var(--text)';this.style.transform='';this.style.boxShadow=''">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              YouTube
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/sanskarIN" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex; align-items:center; gap:6px; padding:8px 14px; background:var(--bg3); border:1px solid var(--border); border-radius:10px; color:var(--text); text-decoration:none; font-size:0.82rem; font-weight:600; transition:all 0.2s;"
+              onmouseover="this.style.background='#333';this.style.borderColor='#666';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)'"
+              onmouseout="this.style.background='var(--bg3)';this.style.borderColor='var(--border)';this.style.transform='';this.style.boxShadow=''">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+            <!-- X / Twitter -->
+            <a href="https://www.x.com/Sanskar_in" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex; align-items:center; gap:6px; padding:8px 14px; background:var(--bg3); border:1px solid var(--border); border-radius:10px; color:var(--text); text-decoration:none; font-size:0.82rem; font-weight:600; transition:all 0.2s;"
+              onmouseover="this.style.background='#1d9bf0';this.style.borderColor='#1d9bf0';this.style.color='#fff';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(29,155,240,0.4)'"
+              onmouseout="this.style.background='var(--bg3)';this.style.borderColor='var(--border)';this.style.color='var(--text)';this.style.transform='';this.style.boxShadow=''">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              X (Twitter)
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/sanskarIN/" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex; align-items:center; gap:6px; padding:8px 14px; background:var(--bg3); border:1px solid var(--border); border-radius:10px; color:var(--text); text-decoration:none; font-size:0.82rem; font-weight:600; transition:all 0.2s;"
+              onmouseover="this.style.background='#0a66c2';this.style.borderColor='#0a66c2';this.style.color='#fff';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(10,102,194,0.4)'"
+              onmouseout="this.style.background='var(--bg3)';this.style.borderColor='var(--border)';this.style.color='var(--text)';this.style.transform='';this.style.boxShadow=''">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Contact -->
+        <div>
+          <div style="font-size:0.95rem; font-weight:700; color:var(--text); margin-bottom:16px;">📬 Contact</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <!-- Phone -->
+            <!-- <a href="tel:+919795753292"
+              style="display:flex; align-items:center; gap:10px; color:var(--text2); text-decoration:none; font-size:0.85rem; transition:color 0.2s;"
+              onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text2)'">
+              <span
+                style="width:32px; height:32px; border-radius:8px; background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;">📱</span>
+              +91 97957 53292
+            </a> -->
+            <!-- Gmail -->
+            <a href="mailto:sanskarin@outlook.in"
+              style="display:flex; align-items:center; gap:10px; color:var(--text2); text-decoration:none; font-size:0.82rem; transition:color 0.2s; word-break:break-all;"
+              onmouseover="this.style.color='#ea4335'" onmouseout="this.style.color='var(--text2)'">
+              <span
+                style="width:32px; height:32px; border-radius:8px; background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;">📧</span>
+              sanskarin@outlook.in
+            </a>
+            <!-- Support Gmail -->
+            <a href="mailto:supportramsandesh@gmail.com"
+              style="display:flex; align-items:center; gap:10px; color:var(--text2); text-decoration:none; font-size:0.82rem; transition:color 0.2s;"
+              onmouseover="this.style.color='#ea4335'" onmouseout="this.style.color='var(--text2)'">
+              <span
+                style="width:32px; height:32px; border-radius:8px; background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;">🛟</span>
+              supportramsandesh@gmail.com
+            </a>
+            <!-- Outlook -->
+            <a href="mailto:sanskarin.business@gmail.com"
+              style="display:flex; align-items:center; gap:10px; color:var(--text2); text-decoration:none; font-size:0.82rem; transition:color 0.2s; word-break:break-all;"
+              onmouseover="this.style.color='#0078d4'" onmouseout="this.style.color='var(--text2)'">
+              <span
+                style="width:32px; height:32px; border-radius:8px; background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;">📨</span>
+              sanskarin.business@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 3: Other Modules -->
+        <div>
+          <h3 style="color:var(--text);font-size:18px;margin-bottom:15px;">Other Modules</h3>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+            <li><a href="../CSS/index.html" style="color:var(--text3);text-decoration:none;font-size:14px;transition:color 0.2s;">🎨 CSS Mastery</a></li>
+            <li><a href="../JavaScript/index.html" style="color:var(--text3);text-decoration:none;font-size:14px;transition:color 0.2s;">⚡ JavaScript Mastery</a></li>
+            <li><a href="../React/index.html" style="color:var(--text3);text-decoration:none;font-size:14px;transition:color 0.2s;">⚛️ React Mastery</a></li>
+            <li><a href="../index.html" style="color:var(--text3);text-decoration:none;font-size:14px;transition:color 0.2s;">🚀 Hub Home</a></li>
+            <li><a href="https://sanskarIN.gumroad.com" target="_blank" rel="noopener" style="color:var(--text3);text-decoration:none;font-size:14px;transition:color 0.2s;">📚 E-Books (Gumroad)</a></li>
+            <li><a href="https://www.buymeacoffee.com/sanskarIN" target="_blank" rel="noopener" style="color:var(--text3);text-decoration:none;font-size:14px;transition:color 0.2s;"><img src="bmc-logo.jpg" alt="BMC" style="width:24px;height:24px;border-radius:6px;vertical-align:middle;margin-right:8px;">Buy Me a Coffee</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Quick Links -->
+        <div>
+          <div style="font-size:0.95rem; font-weight:700; color:var(--text); margin-bottom:16px;">🔗 Quick Links</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <a href="../Follow-Sanskar.html"
+              style="color:var(--text2); text-decoration:none; font-size:0.85rem; padding:6px 0; transition:all 0.2s; display:flex; align-items:center; gap:8px;"
+              onmouseover="this.style.color='var(--accent)';this.style.paddingLeft='8px'"
+              onmouseout="this.style.color='var(--text2)';this.style.paddingLeft='0'">
+              <span style="opacity:0.6;">→</span> Follow Sanskar
+            </a>
+            <a href="../about.html"
+              style="color:var(--text2); text-decoration:none; font-size:0.85rem; padding:6px 0; transition:all 0.2s; display:flex; align-items:center; gap:8px;"
+              onmouseover="this.style.color='var(--accent)';this.style.paddingLeft='8px'"
+              onmouseout="this.style.color='var(--text2)';this.style.paddingLeft='0'">
+              <span style="opacity:0.6;">→</span> About Sanskar
+            </a>
+            <a href="../support.html"
+              style="color:var(--text2); text-decoration:none; font-size:0.85rem; padding:6px 0; transition:all 0.2s; display:flex; align-items:center; gap:8px;"
+              onmouseover="this.style.color='var(--accent)';this.style.paddingLeft='8px'"
+              onmouseout="this.style.color='var(--text2)';this.style.paddingLeft='0'">
+              <span style="opacity:0.6;">→</span> Support & Help
+            </a>
+            <a href="../developer.html"
+              style="color:var(--text2); text-decoration:none; font-size:0.85rem; padding:6px 0; transition:all 0.2s; display:flex; align-items:center; gap:8px;"
+              onmouseover="this.style.color='var(--accent)';this.style.paddingLeft='8px'"
+              onmouseout="this.style.color='var(--text2)';this.style.paddingLeft='0'">
+              <span style="opacity:0.6;">→</span> Developer Hub
+            </a>
+            <a href="../privacy.html"
+              style="color:var(--text2); text-decoration:none; font-size:0.85rem; padding:6px 0; transition:all 0.2s; display:flex; align-items:center; gap:8px;"
+              onmouseover="this.style.color='var(--accent)';this.style.paddingLeft='8px'"
+              onmouseout="this.style.color='var(--text2)';this.style.paddingLeft='0'">
+              <span style="opacity:0.6;">→</span> Privacy Policy
+            </a>
+            <a href="../terms.html"
+              style="color:var(--text2); text-decoration:none; font-size:0.85rem; padding:6px 0; transition:all 0.2s; display:flex; align-items:center; gap:8px;"
+              onmouseover="this.style.color='var(--accent)';this.style.paddingLeft='8px'"
+              onmouseout="this.style.color='var(--text2)';this.style.paddingLeft='0'">
+              <span style="opacity:0.6;">→</span> Terms of Service
+            </a>
+            <a href="../thanks.html"
+              style="color:var(--text2); text-decoration:none; font-size:0.85rem; padding:6px 0; transition:all 0.2s; display:flex; align-items:center; gap:8px;"
+              onmouseover="this.style.color='var(--accent)';this.style.paddingLeft='8px'"
+              onmouseout="this.style.color='var(--text2)';this.style.paddingLeft='0'">
+              <span style="opacity:0.6;">→</span> Thank You
+            </a>
+            <a href="https://github.com/sanskarIN/DevForge/blob/main/Web%20Development%20Mastery/404.html"
+              target="_blank"
+              style="color:var(--text2); text-decoration:none; font-size:0.85rem; padding:6px 0; transition:all 0.2s; display:flex; align-items:center; gap:8px;"
+              onmouseover="this.style.color='var(--accent)';this.style.paddingLeft='8px'"
+              onmouseout="this.style.color='var(--text2)';this.style.paddingLeft='0'">
+              <span style="opacity:0.6;">→</span> 404 Page (Fallback)
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div
+        style="border-top:1px solid var(--border); padding:16px 32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; max-width:1300px; margin:0 auto;">
+        <div style="display:flex; gap:20px; align-items:center; font-size:0.82rem; color:var(--text2);">
+          <span style="display:flex; align-items:center; gap:6px;">
+            <span style="width:8px; height:8px; border-radius:50%; background:#10b981; display:inline-block;"></span>
+            v2.0 Premium
+          </span>
+          <span style="opacity:0.4;">|</span>
+          <span>100/100 Tags Indexed</span>
+        </div>
+        <div style="font-weight:600; font-size:0.82rem; color:var(--text);">© 2026 Sanskar Yadav — All Rights Reserved
+        </div>
+        <div style="font-size:0.78rem; color:var(--text2);">Made with ❤️ in India</div>
+        <button class="donate-btn" onclick="openDonate()">❤️ Donate Sanskar (Ram Sandesh)</button>
+      </div>
+
+    </footer>
+
+    <!-- WELCOME MODAL -->
+    <dialog id="welcomeModal"
+      style="width:90%; max-width:420px; padding:30px; border:1px solid var(--border); border-radius:16px; background:var(--bg2); color:var(--text); box-shadow:0 25px 50px rgba(0,0,0,0.5); text-align:center;">
+      <h2 style="margin:0 0 16px;font-family:'Plus Jakarta Sans',sans-serif;color:var(--accent);">Welcome to the Guide!
+        👋</h2>
+      <p style="margin-bottom:24px;color:var(--text2);font-size:0.95rem;">What should we call you? (Optional)</p>
+      <input type="text" id="wmUsername" placeholder="Enter your name..." autocomplete="off"
+        style="width:100%;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg4);color:var(--text);font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:24px;outline:none;box-sizing:border-box;">
+      <div style="display:flex;gap:12px;justify-content:center;">
+        <button onclick="saveUsername()"
+          style="flex:1;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:bold;transition:0.2s;">Save
+          & Continue</button>
+        <button onclick="skipUsername()"
+          style="padding:12px 20px;background:var(--bg4);color:var(--text);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-weight:600;transition:0.2s;">Skip</button>
+      </div>
+    </dialog>
+    <style>
+      /* Donate Button */
+      .donate-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 28px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #f59e0b, #ef4444);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        margin-top: 20px;
+      }
+
+      .top-donate-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border: none;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #f59e0b, #ef4444);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 2px 10px rgba(245, 158, 11, 0.2);
+      }
+
+      .top-donate-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      }
+
+      .donate-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+      }
+
+      .donate-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        z-index: 1001;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .donate-overlay.active {
+        display: flex;
+        opacity: 1;
+      }
+
+      .donate-modal {
+        background: var(--bg2, #111827);
+        border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 420px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        transform: scale(0.9);
+        transition: transform 0.3s;
+      }
+
+      .donate-overlay.active .donate-modal {
+        transform: scale(1);
+      }
+
+      .donate-modal h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--text, #f1f5f9);
+        margin-bottom: 8px;
+      }
+
+      .donate-modal p {
+        color: var(--text2, #94a3b8);
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+        line-height: 1.5;
+      }
+
+      .donate-modal img {
+        width: 100%;
+        max-width: 280px;
+        border-radius: 12px;
+        border: 3px solid var(--border, rgba(255, 255, 255, 0.08));
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .donate-close {
+        margin-top: 24px;
+        padding: 10px 28px;
+        border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+        border-radius: 8px;
+        background: transparent;
+        color: var(--text2, #94a3b8);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .donate-close:hover {
+        background: var(--bg3, #1f2937);
+        color: var(--text, #f1f5f9);
+      }
+
+      #welcomeModal::backdrop {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+      }
+    </style>
+
+
+
+  </main>
+
+  <link rel="stylesheet" href="style.css"
+    onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/gh/sanskarIN/DevForge@main/Web%20Development%20Mastery/HTML/style.css';">
+
+  <!-- THEME GALLERY MODAL -->
+  <dialog id="themeModal">
+    <div class="tm-head">
+      <h2>🎨 Theme Gallery &amp; Customizer</h2>
+      <button class="tm-close" onclick="document.getElementById('themeModal').close()">✕</button>
+    </div>
+
+    <h3 style="margin-bottom:12px;font-size:1.1rem;color:var(--text2)">✨ 25+ Premium Presets</h3>
+    <div class="tm-grid" id="themeGrid">
+      <!-- Preset buttons injected by JS -->
+    </div>
+
+    <div class="custom-theme-box">
+      <h3>🛠️ Create Custom Theme</h3>
+      <p style="font-size:0.85rem;color:var(--text3);margin-bottom:12px;">Mix your own colors. Changes apply instantly!
+      </p>
+      <div class="ct-grid">
+        <div class="ct-item"><span>Background (bg)</span><input type="color" id="ct-bg" value="#0a0a1a"></div>
+        <div class="ct-item"><span>Card / UI (bg2)</span><input type="color" id="ct-bg2" value="#12122a"></div>
+        <div class="ct-item"><span>Text Color</span><input type="color" id="ct-text" value="#d0d0ee"></div>
+        <div class="ct-item"><span>Primary Accent</span><input type="color" id="ct-accent" value="#6c63ff"></div>
+        <div class="ct-item"><span>Secondary Accent</span><input type="color" id="ct-accent2" value="#3ecfcf"></div>
+        <div class="ct-item" style="flex:1;display:flex;justify-content:flex-end;align-items:flex-end;">
+          <button onclick="saveCustomTheme()" class="save-ct-btn">💾 Save Custom</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- CHEAT SHEET MODAL -->
+  <dialog id="cheatSheetModal"
+    style="padding:0;border:none;border-radius:28px;background:var(--bg2);color:var(--text);max-width:1000px;width:95%;box-shadow:0 30px 100px rgba(0,0,0,0.6);overflow:hidden;">
+    <div
+      style="padding:24px;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+      <h2 style="margin:0;font-family:'Plus Jakarta Sans',sans-serif;">📜 HTML5 Tags Cheat Sheet</h2>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <input type="text" id="csSearch" placeholder="Search tags..." oninput="renderCheatSheet()"
+          style="background:var(--bg);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:12px;outline:none;width:200px;">
+        <button onclick="document.getElementById('cheatSheetModal').close()"
+          style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">✕</button>
+      </div>
+    </div>
+    <div id="csGrid" class="cs-grid" style="padding:24px;max-height:70vh;overflow-y:auto;"></div>
+  </dialog>
+
+  <!-- MASTERY CENTER MODAL -->
+  <dialog id="masteryCenterModal"
+    style="padding:0;border:none;border-radius:28px;background:var(--bg2);color:var(--text);max-width:850px;width:95%;box-shadow:0 30px 100px rgba(0,0,0,0.6);overflow:hidden;">
+    <div style="display:grid;grid-template-columns:250px 1fr;height:85vh;">
+      <div
+        style="background:var(--bg3);padding:32px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:12px;">
+        <h2 style="margin:0 0 20px;font-size:1.4rem;">🎓 Mastery Center</h2>
+        <button class="extra-tab-btn active" onclick="showMasteryTab('interview')">💬 Interview Q&A</button>
+        <button class="extra-tab-btn" onclick="showMasteryTab('best-practices')">🛡️ Best Practices</button>
+        <button class="extra-tab-btn" onclick="showMasteryTab('flashcards')">🃏 Flashcards</button>
+        <div style="margin-top:auto;padding:16px;background:var(--bg);border-radius:16px;text-align:center;">
+          <div style="font-size:0.8rem;opacity:0.6;margin-bottom:4px;">Mastery Rank</div>
+          <div id="mcRank" style="font-weight:800;color:var(--accent);font-size:1.1rem;">Novice</div>
+        </div>
+        <button onclick="document.getElementById('masteryCenterModal').close()"
+          style="background:var(--bg4);border:1px solid var(--border);color:var(--text);padding:12px;border-radius:12px;cursor:pointer;margin-top:12px;">Close</button>
+      </div>
+      <div id="mcContent" style="padding:40px;overflow-y:auto;background:var(--bg);">
+        <!-- Content dynamic -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PLAYGROUND MODAL (Pro Editor) -->
+  <dialog id="playgroundModal" class="pg-dialog">
+    <div class="pg-wrapper">
+      <!-- Toolbar -->
+      <div class="pg-toolbar">
+        <div class="pg-toolbar-left">
+          <span class="pg-logo">💻 Pro Editor</span>
+          <div class="pg-toolbar-divider"></div>
+          <button class="pg-tb" onclick="pgNewFile()" title="New File (Ctrl+N)">📄 New</button>
+          <button class="pg-tb" onclick="document.getElementById('pgFileInput').click()" title="Open File">📂
+            Open</button>
+          <button class="pg-tb" onclick="pgDownloadFile()" title="Download HTML">💾 Save</button>
+          <input type="file" id="pgFileInput" accept=".html,.htm,.txt,.css,.js" style="display:none"
+            onchange="pgOpenFile(event)">
+          <div class="pg-toolbar-divider"></div>
+          <button class="pg-tb" onclick="pgUndo()" title="Undo (Ctrl+Z)">↩️</button>
+          <button class="pg-tb" onclick="pgRedo()" title="Redo (Ctrl+Y)">↪️</button>
+          <button class="pg-tb" onclick="pgFormat()" title="Format Code (Ctrl+Shift+F)">✨ Format</button>
+          <div class="pg-toolbar-divider"></div>
+          <select id="pgTemplate" onchange="loadPgTemplate()" class="pg-select">
+            <option value="">🚀 Templates...</option>
+            <option value="landing">🏠 Landing Page</option>
+            <option value="form">📝 Contact Form</option>
+            <option value="article">📰 Blog Article</option>
+            <option value="dashboard">📊 Dashboard</option>
+            <option value="portfolio">🎨 Portfolio</option>
+          </select>
+        </div>
+        <div class="pg-toolbar-right">
+          <span id="pgAutosaveStatus" class="pg-autosave">💾 Saved</span>
+          <button class="pg-tb" onclick="pgRunPreview()" title="Run (Ctrl+Enter)">▶️ Run</button>
+          <button class="pg-tb" onclick="copyPgCode()" title="Copy Code">📋 Copy</button>
+          <button class="pg-tb" onclick="togglePgLayout()" title="Toggle Layout" id="pgLayoutBtn">⬜ Layout</button>
+          <button class="pg-tb" onclick="togglePgFullscreen()" title="Fullscreen" id="pgFullscreenBtn">⛶</button>
+          <button class="pg-tb pg-close-btn" onclick="closePgModal()">✕</button>
+        </div>
+      </div>
+      <!-- Editor + Preview Split -->
+      <div class="pg-body" id="pgBody">
+        <div class="pg-editor-pane" id="pgEditorPane">
+          <div class="pg-pane-header">
+            <span>📝 CODE EDITOR</span>
+            <span id="pgFileName" class="pg-filename">untitled.html</span>
+          </div>
+          <textarea id="pgEditor"></textarea>
+          <div class="pg-statusbar" id="pgStatusbar">
+            <span>Ln <span id="pgLine">1</span>, Col <span id="pgCol">1</span></span>
+            <span><span id="pgChars">0</span> chars</span>
+            <span>HTML</span>
+            <span>UTF-8</span>
+          </div>
+        </div>
+        <div class="pg-preview-pane" id="pgPreviewPane">
+          <div class="pg-pane-header">
+            <span>👁️ LIVE PREVIEW</span>
+            <button class="pg-tb pg-console-toggle" onclick="togglePgConsole()" title="Toggle Console">🖥️
+              Console</button>
+          </div>
+          <iframe id="pgFrame" class="pg-iframe"></iframe>
+          <div class="pg-console" id="pgConsole" style="display:none;">
+            <div class="pg-console-header">
+              <span>🖥️ Console Output</span>
+              <button onclick="clearPgConsole()" class="pg-tb" style="font-size:0.7rem;">🗑️ Clear</button>
+            </div>
+            <div class="pg-console-log" id="pgConsoleLog"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"
+    onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/sanskarIN/DevForge@main/Web%20Development%20Mastery/HTML/script.js';"></script>
+
+  <!-- NON-BLOCKING WELCOME NOTIFICATION (replaces blocking alerts for Lighthouse performance) -->
+  <div class="notification-banner" id="welcomeBanner" role="alert" aria-live="polite">
+    <div class="nb-text">
+      👋 <strong>Hi! I'm Sanskar Yadav.</strong> I've written 100 important HTML tags with detailed explanations,
+      examples & outputs. I hope you enjoy it! Your feedback is welcome.
+    </div>
+    <button class="nb-close" onclick="document.getElementById('welcomeBanner').classList.remove('show')"
+      aria-label="Dismiss notification">Got it!</button>
+  </div>
+  <script>
+    // Show banner after a short delay (non-blocking)
+    setTimeout(function () {
+      var banner = document.getElementById('welcomeBanner');
+      if (banner && !localStorage.getItem('welcomeBannerDismissed')) {
+        banner.classList.add('show');
+        banner.querySelector('.nb-close').addEventListener('click', function () {
+          localStorage.setItem('welcomeBannerDismissed', 'true');
+        });
+      }
+    }, 1500);
+
+    // Update progress bar aria-valuenow on scroll
+    window.addEventListener('scroll', function () {
+      var bar = document.getElementById('progress-bar');
+      if (bar) {
+        var pct = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+        bar.setAttribute('aria-valuenow', pct);
+      }
+    }, { passive: true });
+  </script>
+
+  <!-- Structured Data for SEO (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Deep Dive into TypeScript Mastery — 100 Tags Explained",
+    "description": "Comprehensive guide to TypeScript concepts with in-depth explanations, live code examples, copy-ready snippets, and 25+ premium themes.",
+    "author": {
+      "@type": "Person",
+      "name": "Sanskar Yadav"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Sanskar Developer"
+    },
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-19",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "HTML"
+    }
+  }
+  </script>
+  <!-- Reading Progress Tracker & Scroll-to-Top -->
+  <div id="readingTracker"
+    style="display:none; position:fixed; bottom:90px; right:30px; z-index:998; background:var(--bg2); color:var(--text); border:1px solid var(--border); border-radius:30px; padding:8px 16px; font-size:0.85rem; font-weight:700; box-shadow:0 4px 15px rgba(0,0,0,0.2); backdrop-filter:blur(10px); transition:opacity 0.3s, transform 0.3s; opacity:0; transform:translateY(20px); align-items:center; gap:8px;">
+    <span>📖</span> <span id="readCount">0</span>/<span id="totalCountRead">100</span> Tags Read
+  </div>
+
+  <button id="scrollToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top"
+    style="display:none; position:fixed; bottom:30px; right:30px; z-index:999; background:var(--bg2); color:var(--accent); border:none; border-radius:50%; width:50px; height:50px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.3); align-items:center; justify-content:center; transition: opacity 0.3s, transform 0.3s; opacity: 0; transform: translateY(20px); outline:none;">
+    <svg class="progress-ring" width="50" height="50"
+      style="position:absolute; top:0; left:0; transform:rotate(-90deg);">
+      <circle class="progress-ring__circle" stroke="var(--accent)" stroke-width="4" fill="transparent" r="22" cx="25"
+        cy="25" style="transition: stroke-dashoffset 0.1s; stroke-dasharray: 138; stroke-dashoffset: 138;" />
+    </svg>
+    <span style="font-size:20px; z-index:2; line-height:1;">⬆️</span>
+  </button>
+  <script>
+    let readTagsSet = new Set(JSON.parse(localStorage.getItem('htmlReadTags') || '[]'));
+
+    function updateReadProgress() {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollY = window.scrollY;
+
+      // Update scroll-to-top ring
+      const btn = document.getElementById('scrollToTopBtn');
+      const tracker = document.getElementById('readingTracker');
+      const circle = document.querySelector('.progress-ring__circle');
+
+      if (scrollY > 300) {
+        btn.style.display = 'flex';
+        tracker.style.display = 'flex';
+        setTimeout(() => {
+          btn.style.opacity = '1';
+          btn.style.transform = 'translateY(0)';
+          tracker.style.opacity = '1';
+          tracker.style.transform = 'translateY(0)';
+        }, 10);
+      } else {
+        btn.style.opacity = '0';
+        btn.style.transform = 'translateY(20px)';
+        tracker.style.opacity = '0';
+        tracker.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          if (window.scrollY <= 300) {
+            btn.style.display = 'none';
+            tracker.style.display = 'none';
+          }
+        }, 300);
+      }
+
+      if (h > 0) {
+        const pct = Math.min(100, Math.max(0, scrollY / h * 100));
+        if (circle) {
+          const offset = 138 - (pct / 100) * 138;
+          circle.style.strokeDashoffset = offset;
+        }
+      }
+
+      // Check which tags are read
+      const sections = document.querySelectorAll("section[id]");
+      sections.forEach(s => {
+        if (!readTagsSet.has(s.id) && scrollY + window.innerHeight > s.offsetTop + 100) {
+          readTagsSet.add(s.id);
+        }
+      });
+      localStorage.setItem('htmlReadTags', JSON.stringify([...readTagsSet]));
+
+      const rc = document.getElementById('readCount');
+      if (rc) rc.textContent = readTagsSet.size;
+    }
+    window.addEventListener('scroll', updateReadProgress, { passive: true });
+    // Initialize
+    setTimeout(() => {
+      document.getElementById('totalCountRead').textContent = document.querySelectorAll("section[id]").length || 100;
+      updateReadProgress();
+    }, 1000);
+  </script>
+  <!-- Cmd+K Modal -->
+  <dialog id="cmdKModal"
+    style="padding:0; border:none; border-radius:12px; background:var(--bg); color:var(--text); width:90%; max-width:600px; box-shadow:0 10px 40px rgba(0,0,0,0.5); backdrop-filter:blur(10px);">
+    <div style="padding:16px; border-bottom:1px solid var(--border);">
+      <input type="text" id="cmdKInput" placeholder="Search tags... (e.g. video, canvas)"
+        style="width:100%; padding:12px; font-size:1.2rem; background:transparent; border:none; color:var(--text); outline:none;">
+    </div>
+    <div id="cmdKResults" style="max-height:400px; overflow-y:auto; padding:8px;"></div>
+  </dialog>
+
+  <!-- Quiz Modal -->
+  <dialog id="quizModal"
+    style="padding:24px; border:none; border-radius:16px; background:var(--bg); color:var(--text); width:90%; max-width:500px; box-shadow:0 10px 40px rgba(0,0,0,0.5); text-align:center; overflow:hidden;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 style="margin:0; font-family:'Plus Jakarta Sans', sans-serif;">🎯 Quiz</h2>
+      <div id="quizScoreDisplay"
+        style="font-weight:bold; color:var(--accent); background:color-mix(in srgb, var(--accent) 15%, transparent); padding:6px 14px; border-radius:20px; font-size:0.9rem;">
+        Score: 0/0</div>
+    </div>
+
+    <div id="quizActiveArea">
+      <p id="quizQuestion" style="font-size:1.1rem; margin-bottom:20px; line-height:1.5; color:var(--text);"></p>
+      <div id="quizOptions" style="display:flex; flex-direction:column; gap:10px;"></div>
+    </div>
+
+    <div id="quizResultArea" style="display:none; padding:30px 0;">
+      <h1 id="quizFinalScore" style="font-size:4rem; margin:0 0 10px; color:var(--accent);">5/5</h1>
+      <p style="font-size:1.1rem; color:var(--text2); margin-bottom:30px;">Great job completing the quiz!</p>
+      <button type="button" onclick="shareScore()"
+        style="background:var(--accent2); color:#fff; border:none; padding:14px 20px; border-radius:8px; font-weight:bold; cursor:pointer; width:100%; margin-bottom:12px; font-size:1.1rem; transition:0.2s; box-shadow:0 4px 10px rgba(0,0,0,0.2);">📋
+        Share Score</button>
+      <button type="button" onclick="openQuiz()"
+        style="background:var(--accent); color:#fff; border:none; padding:14px 20px; border-radius:8px; font-weight:bold; cursor:pointer; width:100%; font-size:1.1rem; transition:0.2s;">🔄
+        Play Again</button>
+      <button type="button" onclick="document.getElementById('quizModal').close()"
+        style="background:transparent; color:var(--text); border:none; padding:10px; margin-top:10px; cursor:pointer; text-decoration:underline;">Close</button>
+    </div>
+
+    <div style="margin-top:24px; display:flex; justify-content:space-between;" id="quizFooterActions">
+      <button type="button" onclick="document.getElementById('quizModal').close()"
+        style="background:color-mix(in srgb, var(--text) 20%, transparent); color:var(--text); border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-weight:bold; transition:0.2s;">Close</button>
+      <button type="button" id="quizNextBtn" onclick="nextQuizQuestion()"
+        style="background:var(--accent); color:#fff; border:none; padding:10px 24px; border-radius:8px; cursor:pointer; font-weight:bold; transition:0.2s; opacity:0.5; pointer-events:none; box-shadow:0 4px 10px rgba(0,0,0,0.2);">Next
+        ➡️</button>
+    </div>
+  </dialog>
+
+  <!-- Translate Modal -->
+  <dialog id="translateModal"
+    style="padding:0; border:none; border-radius:24px; background:var(--bg); color:var(--text); width:95%; max-width:600px; box-shadow:0 30px 100px rgba(0,0,0,0.7); overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+    <div
+      style="padding:30px; background:linear-gradient(135deg, var(--bg2), var(--bg3)); border-bottom:1px solid var(--border);">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+        <div>
+          <h2 style="margin:0; font-family:'Plus Jakarta Sans', sans-serif; font-size:1.5rem; letter-spacing:-0.5px;">🌍
+            Global Translation</h2>
+          <p style="margin:4px 0 0; opacity:0.6; font-size:0.9rem;">Instantly translate into 130+ languages from around
+            the world.</p>
+        </div>
+        <button onclick="document.getElementById('translateModal').close()"
+          style="background:var(--bg4); color:var(--text); border:none; width:40px; height:40px; border-radius:50%; cursor:pointer; font-size:1.2rem; display:flex; align-items:center; justify-content:center; transition:0.3s;"
+          onmouseover="this.style.transform='rotate(90deg)'" onmouseout="this.style.transform='rotate(0deg)'">✖</button>
+      </div>
+      <div style="position:relative;">
+        <span style="position:absolute; left:16px; top:50%; transform:translateY(-50%); opacity:0.5;">🔍</span>
+        <input type="text" id="langSearch" list="googleLangs" oninput="handleLangInput(this)"
+          placeholder="Search any language (e.g. Hindi, Sanskrit, French...)" autocomplete="off"
+          style="width:100%; padding:16px 16px 16px 45px; border-radius:16px; border:2px solid var(--accent); background:var(--bg); color:var(--text); font-family:inherit; outline:none; font-size:1rem; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
+        <datalist id="googleLangs"></datalist>
+      </div>
+    </div>
+
+    <div
+      style="padding:20px 30px 10px; background:var(--bg); font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; opacity:0.5;">
+      Quick Select</div>
+
+    <div id="quickLangs"
+      style="max-height: 180px; overflow-y: auto; padding: 0 30px 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; border-bottom: 1px solid var(--border);">
+      <!-- Populated by JS -->
+    </div>
+
+    <div
+      style="padding:20px 30px 10px; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; opacity:0.5;">
+      All Languages</div>
+
+    <div id="langList"
+      style="max-height:350px; overflow-y:auto; padding:0 30px 30px; display:grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap:10px;">
+      <div style="grid-column: 1 / -1; padding:60px; text-align:center; opacity:0.7;">
+        <div class="loader"
+          style="width:40px; height:40px; border:4px solid var(--accent); border-top-color:transparent; border-radius:50%; margin:0 auto 15px; animation:spin 1s linear infinite;">
+        </div>
+        <p style="margin:0; font-weight:600;">Powering up Google Translate...</p>
+      </div>
+    </div>
+
+    <style>
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .lang-opt {
+        position: relative;
+        overflow: hidden;
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .lang-opt:hover {
+        background: var(--accent);
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-color: transparent;
+      }
+
+      .lang-opt::after {
+        content: '✓';
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 0.7rem;
+        opacity: 0;
+        transition: 0.3s;
+      }
+
+      .lang-opt:hover::after {
+        opacity: 1;
+      }
+
+      #quickLangs::-webkit-scrollbar,
+      #langList::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      #quickLangs::-webkit-scrollbar-track,
+      #langList::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      #quickLangs::-webkit-scrollbar-thumb,
+      #langList::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 10px;
+        border: 2px solid var(--bg);
+      }
+
+      #quickLangs::-webkit-scrollbar-thumb:hover,
+      #langList::-webkit-scrollbar-thumb:hover {
+        background: var(--accent);
+      }
+    </style>
+  </dialog>
+
+  <!-- History Modal -->
+  <dialog id="historyModal"
+    style="padding:24px; border:none; border-radius:16px; background:var(--bg); color:var(--text); width:90%; max-width:500px; box-shadow:0 20px 80px rgba(0,0,0,0.6); overflow-y:auto; max-height:80vh;">
+    <h2 style="margin-top:0; font-family:'Plus Jakarta Sans', sans-serif; color:var(--accent);">📜 Evolution of HTML
+    </h2>
+    <div style="position:relative; margin-top:30px; padding-left:30px; border-left:2px solid var(--border);">
+      <div style="margin-bottom:24px; position:relative;">
+        <div
+          style="position:absolute; left:-39px; top:0; width:16px; height:16px; border-radius:50%; background:var(--accent); border:4px solid var(--bg);">
+        </div>
+        <strong style="display:block; font-size:1.1rem; color:var(--text);">1991: HTML 1.0</strong>
+        <p style="margin:4px 0; color:var(--text2); font-size:0.9rem;">Berners-Lee shares "TypeScript Mastery", the first
+          description of HTML with just 18 tags.</p>
+      </div>
+      <div style="margin-bottom:24px; position:relative;">
+        <div
+          style="position:absolute; left:-39px; top:0; width:16px; height:16px; border-radius:50%; background:var(--accent2); border:4px solid var(--bg);">
+        </div>
+        <strong style="display:block; font-size:1.1rem; color:var(--text);">1995: HTML 2.0</strong>
+        <p style="margin:4px 0; color:var(--text2); font-size:0.9rem;">The first official standard. Tables and Forms
+          become part of the web.</p>
+      </div>
+      <div style="margin-bottom:24px; position:relative;">
+        <div
+          style="position:absolute; left:-39px; top:0; width:16px; height:16px; border-radius:50%; background:var(--accent); border:4px solid var(--bg);">
+        </div>
+        <strong style="display:block; font-size:1.1rem; color:var(--text);">1999: HTML 4.01</strong>
+        <p style="margin:4px 0; color:var(--text2); font-size:0.9rem;">The web matures. CSS starts to separate design
+          from structure.</p>
+      </div>
+      <div style="margin-bottom:24px; position:relative;">
+        <div
+          style="position:absolute; left:-39px; top:0; width:16px; height:16px; border-radius:50%; background:var(--accent2); border:4px solid var(--bg);">
+        </div>
+        <strong style="display:block; font-size:1.1rem; color:var(--text);">2014: HTML5</strong>
+        <p style="margin:4px 0; color:var(--text2); font-size:0.9rem;">The Modern Era. Native Audio, Video, and semantic
+          tags change everything.</p>
+      </div>
+      <div style="position:relative;">
+        <div
+          style="position:absolute; left:-39px; top:0; width:16px; height:16px; border-radius:50%; background:#10b981; border:4px solid var(--bg);">
+        </div>
+        <strong style="display:block; font-size:1.1rem; color:#10b981;">Today: Living Standard</strong>
+        <p style="margin:4px 0; color:var(--text2); font-size:0.9rem;">HTML is now a "Living Standard" continuously
+          updated by WHATWG.</p>
+      </div>
+    </div>
+    <button onclick="document.getElementById('historyModal').close()"
+      style="margin-top:30px; width:100%; background:var(--accent); color:#fff; border:none; padding:14px; border-radius:8px; cursor:pointer; font-weight:bold; font-size:1rem;">Fascinating!
+      ✨</button>
+  </dialog>
+
+  <!-- Shortcuts Modal -->
+  <dialog id="shortcutsModal"
+    style="padding:24px; border:none; border-radius:16px; background:var(--bg); color:var(--text); width:90%; max-width:400px; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+    <h2 style="margin-top:0; font-family:'Plus Jakarta Sans', sans-serif;">⌨️ Keyboard Shortcuts</h2>
+    <div style="display:flex; flex-direction:column; gap:16px; margin-top:20px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="opacity:0.8;">Search Palette</span>
+        <kbd
+          style="background:var(--bg4); padding:6px 10px; border-radius:6px; border:1px solid var(--border); font-family:monospace; font-weight:bold;">Ctrl
+          + K</kbd>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="opacity:0.8;">Take a Quiz</span>
+        <kbd
+          style="background:var(--bg4); padding:6px 10px; border-radius:6px; border:1px solid var(--border); font-family:monospace; font-weight:bold;">Q</kbd>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="opacity:0.8;">Toggle Zen Mode</span>
+        <kbd
+          style="background:var(--bg4); padding:6px 10px; border-radius:6px; border:1px solid var(--border); font-family:monospace; font-weight:bold;">Z</kbd>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="opacity:0.8;">Open Translate</span>
+        <kbd
+          style="background:var(--bg4); padding:6px 10px; border-radius:6px; border:1px solid var(--border); font-family:monospace; font-weight:bold;">T</kbd>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="opacity:0.8;">Toggle Sidebar</span>
+        <kbd
+          style="background:var(--bg4); padding:6px 10px; border-radius:6px; border:1px solid var(--border); font-family:monospace; font-weight:bold;">M</kbd>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="opacity:0.8;">Print / PDF</span>
+        <kbd
+          style="background:var(--bg4); padding:6px 10px; border-radius:6px; border:1px solid var(--border); font-family:monospace; font-weight:bold;">S</kbd>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="opacity:0.8;">Close Everything</span>
+        <kbd
+          style="background:var(--bg4); padding:6px 10px; border-radius:6px; border:1px solid var(--border); font-family:monospace; font-weight:bold;">Esc</kbd>
+      </div>
+    </div>
+    <button onclick="document.getElementById('shortcutsModal').close()"
+      style="margin-top:30px; width:100%; background:var(--accent); color:#fff; border:none; padding:12px; border-radius:8px; cursor:pointer; font-weight:bold; font-size:1rem; transition:0.2s;">Got
+      it!</button>
+  </dialog>
+
+  <script>
+    // --- CMD+K COMMAND PALETTE ---
+    const cmdKModal = document.getElementById('cmdKModal');
+    const cmdKInput = document.getElementById('cmdKInput');
+    const cmdKResults = document.getElementById('cmdKResults');
+
+    window.addEventListener('keydown', (e) => {
+      // 1. Command Palette (Ctrl/Cmd + K)
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        openCmdK();
+        return;
+      }
+
+      // Don't trigger single-key shortcuts if typing in any input/textarea/editable
+      const isInput = e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable;
+      if (isInput) {
+        if (e.key === 'Escape') e.target.blur();
+        return;
+      }
+
+      // 2. Single Key Shortcuts
+      switch (e.key.toLowerCase()) {
+        case 'q': openQuiz(); break;
+        case 'z': toggleZenMode(); break;
+        case 't': openTranslateModal(); break;
+        case 's': setTimeout(() => window.print(), 100); break;
+        case 'h': document.getElementById('historyModal').showModal(); break;
+        case 'm': document.getElementById('sbOpen').click(); break;
+        case 'p': setTimeout(() => window.print(), 100); break; // P for Print too
+        case '?': document.getElementById('shortcutsModal').showModal(); break;
+        case 'escape':
+          document.querySelectorAll('dialog').forEach(d => d.close());
+          // Close sidebar if open
+          if (document.body.classList.contains('sb-open')) {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sbOverlay').classList.remove('active');
+            document.body.classList.remove('sb-open');
+          }
+          break;
+      }
+    });
+
+    function openCmdK() {
+      const modal = document.getElementById('cmdKModal');
+      const input = document.getElementById('cmdKInput');
+      if (modal && input) {
+        modal.showModal();
+        input.value = '';
+        renderCmdKResults('');
+        setTimeout(() => input.focus(), 50);
+      }
+    }
+    cmdKModal.addEventListener('click', (e) => {
+      if (e.target === cmdKModal) cmdKModal.close();
+    });
+    cmdKInput.addEventListener('input', (e) => renderCmdKResults(e.target.value));
+
+    function renderCmdKResults(query) {
+      const q = query.toLowerCase();
+      const filtered = TAGS.filter(t => t.title.toLowerCase().includes(q) || t.id.toLowerCase().includes(q) || t.badge.toLowerCase().includes(q)).slice(0, 8);
+
+      if (filtered.length === 0) {
+        cmdKResults.innerHTML = '<div style="padding:16px; text-align:center; color:var(--text); opacity:0.5;">No tags found...</div>';
+        return;
+      }
+
+      cmdKResults.innerHTML = filtered.map(t => `
+        <div onclick="document.getElementById('cmdKModal').close(); window.location.href='#${t.id}'" 
+             style="padding:12px; cursor:pointer; border-radius:8px; display:flex; justify-content:space-between; align-items:center;"
+             onmouseover="this.style.background='color-mix(in srgb, var(--accent) 15%, transparent)'" onmouseout="this.style.background='transparent'">
+          <span>${t.emoji} <strong>${t.title.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</strong></span>
+          <span style="font-size:0.8rem; background:var(--accent); color:#fff; padding:2px 8px; border-radius:12px;">${t.badge}</span>
+        </div>
+      `).join('');
+    }
+
+    // --- INTERACTIVE QUIZ ENGINE ---
+    let currentQuizScore = 0;
+    let currentQuizRound = 0;
+    const MAX_QUIZ_ROUNDS = 5;
+
+    function openQuiz(e) {
+      if (e) e.preventDefault();
+      currentQuizScore = 0;
+      currentQuizRound = 0;
+
+      document.getElementById('quizActiveArea').style.display = 'block';
+      document.getElementById('quizResultArea').style.display = 'none';
+      document.getElementById('quizFooterActions').style.display = 'flex';
+
+      nextQuizQuestion();
+      document.getElementById('quizModal').showModal();
+    }
+
+    function nextQuizQuestion() {
+      if (currentQuizRound >= MAX_QUIZ_ROUNDS) {
+        showQuizResults();
+        return;
+      }
+
+      currentQuizRound++;
+      document.getElementById('quizScoreDisplay').innerText = `Question ${currentQuizRound} of ${MAX_QUIZ_ROUNDS}`;
+      document.getElementById('quizNextBtn').style.opacity = '0.5';
+      document.getElementById('quizNextBtn').style.pointerEvents = 'none';
+
+      const correctTag = TAGS[Math.floor(Math.random() * TAGS.length)];
+
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = correctTag.content;
+      let questionText = "What does this HTML tag do?";
+      const p = tempDiv.querySelector('p');
+      if (p && p.innerText) questionText = p.innerText.trim();
+
+      if (questionText.length > 150) questionText = questionText.substring(0, 150) + '...';
+
+      const safeTitleNoBrackets = correctTag.title.replace(/<|>/g, '');
+      const escapedTitle = safeTitleNoBrackets.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      questionText = questionText.replace(new RegExp(escapedTitle, 'gi'), '___');
+
+      document.getElementById('quizQuestion').innerHTML = `<strong>Which tag does this describe?</strong><br><br><i style="opacity:0.8;">"${questionText}"</i>`;
+
+      let options = [correctTag];
+      while (options.length < 4) {
+        let rand = TAGS[Math.floor(Math.random() * TAGS.length)];
+        if (!options.includes(rand)) options.push(rand);
+      }
+      options.sort(() => Math.random() - 0.5);
+
+      const optionsContainer = document.getElementById('quizOptions');
+      optionsContainer.innerHTML = options.map(opt => `
+        <button type="button" onclick="checkAnswer('${opt.id}', '${correctTag.id}', this)" 
+                style="padding:12px; font-size:1rem; border-radius:8px; border:1px solid color-mix(in srgb, var(--text) 20%, transparent); background:transparent; color:var(--text); cursor:pointer; transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1); text-align:left;">
+          ${opt.emoji} ${opt.title.replace(/</g, "&lt;").replace(/>/g, "&gt;")}
+        </button>
+      `).join('');
+    }
+
+    function checkAnswer(selectedId, correctId, btnElement) {
+      const isCorrect = selectedId === correctId;
+      if (isCorrect) currentQuizScore++;
+
+      if (isCorrect) {
+        btnElement.style.background = '#10b981';
+        btnElement.style.color = '#fff';
+        btnElement.style.borderColor = '#10b981';
+        btnElement.style.transform = 'scale(1.02)';
+        btnElement.innerHTML += " ✅ Correct!";
+        triggerConfetti(btnElement);
+      } else {
+        btnElement.style.background = '#ef4444';
+        btnElement.style.color = '#fff';
+        btnElement.style.borderColor = '#ef4444';
+        btnElement.style.transform = 'translateX(5px)';
+        setTimeout(() => btnElement.style.transform = 'translateX(-5px)', 50);
+        setTimeout(() => btnElement.style.transform = 'translateX(0)', 100);
+        btnElement.innerHTML += " ❌ Incorrect";
+
+        const buttons = document.getElementById('quizOptions').querySelectorAll('button');
+        buttons.forEach(b => {
+          if (b.getAttribute('onclick').includes(correctId) && !b.getAttribute('onclick').includes(selectedId)) {
+            b.style.border = '2px solid #10b981';
+            b.style.background = 'color-mix(in srgb, #10b981 10%, transparent)';
+          }
+        });
+      }
+
+      const buttons = document.getElementById('quizOptions').querySelectorAll('button');
+      buttons.forEach(b => {
+        b.disabled = true;
+        b.style.cursor = 'default';
+      });
+
+      document.getElementById('quizNextBtn').style.opacity = '1';
+      document.getElementById('quizNextBtn').style.pointerEvents = 'auto';
+    }
+
+    function showQuizResults() {
+      document.getElementById('quizActiveArea').style.display = 'none';
+      document.getElementById('quizFooterActions').style.display = 'none';
+      document.getElementById('quizResultArea').style.display = 'block';
+      document.getElementById('quizFinalScore').innerText = `${currentQuizScore}/${MAX_QUIZ_ROUNDS}`;
+
+      const msg = document.getElementById('quizResultArea').querySelector('p');
+      if (currentQuizScore === MAX_QUIZ_ROUNDS) {
+        msg.innerText = "Flawless victory! You are an HTML Master. 👑";
+        triggerConfetti(document.getElementById('quizFinalScore'));
+      } else if (currentQuizScore >= 3) {
+        msg.innerText = "Great job! You know your tags well. 🚀";
+      } else {
+        msg.innerText = "Keep practicing! You'll get there. 📚";
+      }
+    }
+
+    function shareScore() {
+      const text = `🎯 I scored ${currentQuizScore}/${MAX_QUIZ_ROUNDS} on the Ultimate HTML Tag Quiz! Test your knowledge: ${window.location.href}`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Score copied to clipboard!");
+      });
+    }
+
+    // --- CUSTOM TRANSLATE MODAL ---
+    function openTranslateModal() {
+      const modal = document.getElementById('translateModal');
+      const langList = document.getElementById('langList');
+      const quickLangs = document.getElementById('quickLangs');
+      const dataList = document.getElementById('googleLangs');
+      const googleSelect = document.querySelector('.goog-te-combo');
+
+      const QUICK_TARGETS = [
+        { n: 'Hindi', c: 'hi', f: '🇮🇳' }, { n: 'English', c: 'en', f: '🇺🇸' },
+        { n: 'Sanskrit', c: 'sa', f: '🇮🇳' }, { n: 'Bhojpuri', c: 'bho', f: '🇮🇳' },
+        { n: 'Marathi', c: 'mr', f: '🇮🇳' }, { n: 'Bengali', c: 'bn', f: '🇮🇳' },
+        { n: 'Gujarati', c: 'gu', f: '🇮🇳' }, { n: 'Tamil', c: 'ta', f: '🇮🇳' },
+        { n: 'Telugu', c: 'te', f: '🇮🇳' }, { n: 'Urdu', c: 'ur', f: '🇵🇰' },
+        { n: 'Kannada', c: 'kn', f: '🇮🇳' }, { n: 'Malayalam', c: 'ml', f: '🇮🇳' },
+        { n: 'Punjabi', c: 'pa', f: '🇮🇳' }, { n: 'Dogri', c: 'doi', f: '🇮🇳' },
+        { n: 'Maithili', c: 'mai', f: '🇮🇳' }, { n: 'Sindhi', c: 'sd', f: '🇮🇳' },
+        { n: 'Spanish', c: 'es', f: '🇪🇸' }, { n: 'French', c: 'fr', f: '🇫🇷' },
+        { n: 'German', c: 'de', f: '🇩🇪' }, { n: 'Chinese', c: 'zh-CN', f: '🇨🇳' },
+        { n: 'Japanese', c: 'ja', f: '🇯🇵' }, { n: 'Korean', c: 'ko', f: '🇰🇷' },
+        { n: 'Russian', c: 'ru', f: '🇷🇺' }, { n: 'Arabic', c: 'ar', f: '🇸🇦' },
+        { n: 'Portuguese', c: 'pt', f: '🇵🇹' }, { n: 'Italian', c: 'it', f: '🇮🇹' },
+        { n: 'Turkish', c: 'tr', f: '🇹🇷' }, { n: 'Thai', c: 'th', f: '🇹🇭' },
+        { n: 'Vietnamese', c: 'vi', f: '🇻🇳' }, { n: 'Indonesian', c: 'id', f: '🇮🇩' },
+        { n: 'Dutch', c: 'nl', f: '🇳🇱' }, { n: 'Polish', c: 'pl', f: '🇵🇱' },
+        { n: 'Ukrainian', c: 'uk', f: '🇺🇦' }, { n: 'Swedish', c: 'sv', f: '🇸🇪' },
+        { n: 'Greek', c: 'el', f: '🇬🇷' }, { n: 'Hebrew', c: 'iw', f: '🇮🇱' },
+        { n: 'Nepali', c: 'ne', f: '🇳🇵' }, { n: 'Sinhala', c: 'si', f: '🇱🇰' },
+        { n: 'Assamese', c: 'as', f: '🇮🇳' }, { n: 'Odia', c: 'or', f: '🇮🇳' },
+        { n: 'Finnish', c: 'fi', f: '🇫🇮' }, { n: 'Danish', c: 'da', f: '🇩🇰' },
+        { n: 'Norwegian', c: 'no', f: '🇳🇴' }, { n: 'Czech', c: 'cs', f: '🇨🇿' },
+        { n: 'Romanian', c: 'ro', f: '🇷🇴' }, { n: 'Hungarian', c: 'hu', f: '🇭🇺' },
+        { n: 'Persian', c: 'fa', f: '🇮🇷' }, { n: 'Swahili', c: 'sw', f: '🇰🇪' },
+        { n: 'Malay', c: 'ms', f: '🇲🇾' }, { n: 'Filipino', c: 'tl', f: '🇵🇭' },
+        { n: 'Burmese', c: 'my', f: '🇲🇲' }, { n: 'Khmer', c: 'km', f: '🇰🇭' },
+        { n: 'Georgian', c: 'ka', f: '🇬🇪' }, { n: 'Armenian', c: 'hy', f: '🇦🇲' },
+        { n: 'Amharic', c: 'am', f: '🇪🇹' }, { n: 'Zulu', c: 'zu', f: '🇿🇦' },
+        { n: 'Haitian', c: 'ht', f: '🇭🇹' }, { n: 'Serbian', c: 'sr', f: '🇷🇸' },
+        { n: 'Croatian', c: 'hr', f: '🇭🇷' }, { n: 'Bulgarian', c: 'bg', f: '🇧🇬' },
+        { n: 'Slovak', c: 'sk', f: '🇸🇰' }, { n: 'Lithuanian', c: 'lt', f: '🇱🇹' },
+        { n: 'Latvian', c: 'lv', f: '🇱🇻' }, { n: 'Estonian', c: 'et', f: '🇪🇪' },
+        { n: 'Slovenian', c: 'sl', f: '🇸🇮' }, { n: 'Icelandic', c: 'is', f: '🇮🇸' },
+        { n: 'Catalan', c: 'ca', f: '🇪🇸' }, { n: 'Galician', c: 'gl', f: '🇪🇸' },
+        { n: 'Basque', c: 'eu', f: '🇪🇸' }, { n: 'Welsh', c: 'cy', f: '🏴󠁧󠁢󠁷󠁬󠁳󠁿' },
+        { n: 'Irish', c: 'ga', f: '🇮🇪' }, { n: 'Kazakh', c: 'kk', f: '🇰🇿' },
+        { n: 'Uzbek', c: 'uz', f: '🇺🇿' }, { n: 'Azerbaijani', c: 'az', f: '🇦🇿' },
+        { n: 'Yoruba', c: 'yo', f: '🇳🇬' }, { n: 'Somali', c: 'so', f: '🇸🇴' },
+        { n: 'Malagasy', c: 'mg', f: '🇲🇬' }, { n: 'Samoan', c: 'sm', f: '🇼🇸' },
+        { n: 'Hawaiian', c: 'haw', f: '🇺🇸' }, { n: 'Lao', c: 'lo', f: '🇱🇦' }
+      ];
+
+      // Populate Quick Select Tiles
+      quickLangs.innerHTML = QUICK_TARGETS.map(l => `
+        <div class="lang-opt" onclick="selectLanguage('${l.c}', '${l.n}')" style="padding:14px 8px; border-radius:12px; cursor:pointer; text-align:center; display:flex; flex-direction:column; align-items:center; gap:4px; transition:0.3s;">
+          <span style="font-size:1.4rem;">${l.f}</span>
+          <span style="font-weight:700; font-size:0.75rem; letter-spacing:0.3px;">${l.n}</span>
+        </div>
+      `).join('');
+
+      if (!googleSelect) {
+        langList.innerHTML = `
+          <div style="grid-column: 1 / -1; padding:24px; text-align:center; background:rgba(99, 102, 241, 0.1); border-radius:16px; border:1px solid rgba(99, 102, 241, 0.2);">
+            <p style="color:var(--accent); font-weight:bold; margin-bottom:8px;">🚀 Direct Translation Mode</p>
+            <p style="font-size:0.85rem; opacity:0.8; margin:0;">Click any language above to translate the page directly — <b>no server required!</b> A progress bar will show the translation status. You can reset to English anytime.</p>
+          </div>`;
+      } else {
+        const options = Array.from(googleSelect.options).filter(opt => opt.value !== "");
+        if (options.length === 0) {
+          langList.innerHTML = '<div style="grid-column: 1 / -1; padding:40px; text-align:center; opacity:0.6;">⏳ Syncing with Google... Please wait a moment.</div>';
+        } else {
+          dataList.innerHTML = options.map(opt => `<option value="${opt.text}">`).join('');
+
+          langList.innerHTML = options.map(opt => `
+            <div class="lang-opt" onclick="selectLanguage('${opt.value}')" style="padding:12px 14px; border-radius:12px; cursor:pointer; display:flex; flex-direction:column; gap:2px; min-height:55px; justify-content:center;">
+              <span class="l-name" style="font-weight:600; font-size:0.85rem; line-height:1.2;">${opt.text}</span>
+              <span style="opacity:0.4; font-size:0.65rem; font-family:monospace; text-transform:uppercase; letter-spacing:0.5px;">${opt.value}</span>
+            </div>
+          `).join('');
+        }
+      }
+      modal.showModal();
+    }
+
+    function handleLangInput(input) {
+      const val = input.value.toLowerCase().trim();
+      const options = document.querySelectorAll('.lang-opt');
+
+      // Filter visual lists (both Quick and All)
+      options.forEach(opt => {
+        const name = opt.querySelector('.l-name') ? opt.querySelector('.l-name').textContent.toLowerCase() : opt.textContent.toLowerCase();
+        opt.style.display = name.includes(val) ? 'flex' : 'none';
+        // For quick tiles that are 'div' centered, we might need 'block'
+        if (opt.style.display === 'flex' && opt.parentElement.id === 'quickLangs') opt.style.display = 'block';
+      });
+
+      // Check for exact match from suggestions
+      const googleSelect = document.querySelector('.goog-te-combo');
+      if (googleSelect) {
+        const match = Array.from(googleSelect.options).find(opt => opt.text.toLowerCase() === val);
+        if (match) {
+          selectLanguage(match.value);
+          input.value = "";
+        }
+      }
+    }
+    // --- DIRECT TRANSLATION ENGINE (works on file:// without live server) ---
+    // Uses multiple methods to bypass CORS: XHR -> fetch -> JSONP
+
+    function translateViaXHR(text, tl) {
+      return new Promise(function (resolve, reject) {
+        var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='
+          + encodeURIComponent(tl) + '&dt=t&q=' + encodeURIComponent(text);
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function () {
+          try {
+            var data = JSON.parse(xhr.responseText);
+            var out = data[0].map(function (s) { return s[0]; }).join('');
+            resolve(out);
+          } catch (e) { reject(e); }
+        };
+        xhr.onerror = function () { reject(new Error('XHR failed')); };
+        xhr.send();
+      });
+    }
+
+    function translateViaFetch(text, tl) {
+      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='
+        + encodeURIComponent(tl) + '&dt=t&q=' + encodeURIComponent(text);
+      return fetch(url).then(function (r) { return r.json(); }).then(function (data) {
+        return data[0].map(function (s) { return s[0]; }).join('');
+      });
+    }
+
+    var _jsonpId = 0;
+    function translateViaJSONP(text, tl) {
+      return new Promise(function (resolve, reject) {
+        var cbName = '_trCb' + (++_jsonpId);
+        var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='
+          + encodeURIComponent(tl) + '&dt=t&q=' + encodeURIComponent(text)
+          + '&callback=' + cbName;
+        window[cbName] = function (data) {
+          try {
+            var out = data[0].map(function (s) { return s[0]; }).join('');
+            resolve(out);
+          } catch (e) { reject(e); }
+          delete window[cbName];
+          script.remove();
+        };
+        var script = document.createElement('script');
+        script.src = url;
+        script.onerror = function () {
+          delete window[cbName];
+          script.remove();
+          reject(new Error('JSONP failed'));
+        };
+        document.head.appendChild(script);
+      });
+    }
+
+    async function fetchGTrans(text, tl) {
+      if (!text || text.trim().length < 3) return text;
+
+      // Check cache
+      var ck = 'tr_' + tl + '_' + text.length + '_' + text.slice(0, 30);
+      try { var c = sessionStorage.getItem(ck); if (c) return c; } catch (e) { }
+
+      var out = null;
+
+      // Try Method 1: XHR
+      try { out = await translateViaXHR(text, tl); } catch (e) { }
+
+      // Try Method 2: Fetch
+      if (!out) {
+        try { out = await translateViaFetch(text, tl); } catch (e) { }
+      }
+
+      // Try Method 3: JSONP (bypasses ALL CORS restrictions)
+      if (!out) {
+        try { out = await translateViaJSONP(text, tl); } catch (e) { }
+      }
+
+      if (out) {
+        try { sessionStorage.setItem(ck, out); } catch (e) { }
+        return out;
+      }
+
+      return text; // Return original if all methods fail
+    }
+
+    async function directTranslatePage(targetLang, langName) {
+      document.getElementById('translateModal').close();
+
+      // First test if translation API is reachable
+      var testResult = null;
+      try { testResult = await fetchGTrans('hello', targetLang); } catch (e) { }
+
+      if (!testResult || testResult === 'hello') {
+        alert('⚠️ Translation requires an internet connection. Please check your network and try again.');
+        return;
+      }
+
+      // Create progress overlay
+      var ov = document.createElement('div');
+      ov.id = 'dtOverlay';
+      ov.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);z-index:999999;display:flex;align-items:center;justify-content:center;';
+      ov.innerHTML = '<div style="background:var(--bg2,#1a1a2e);border:1px solid var(--border,#333);border-radius:20px;padding:40px;text-align:center;max-width:400px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.5);">'
+        + '<div style="font-size:3rem;margin-bottom:16px;">🌍</div>'
+        + '<h3 style="margin:0 0 8px;font-size:1.3rem;color:var(--text,#fff);">Translating to ' + (langName || targetLang) + '</h3>'
+        + '<p id="dtStat" style="opacity:0.6;font-size:0.9rem;margin:0 0 20px;">Preparing...</p>'
+        + '<div style="background:var(--bg,#111);border-radius:10px;height:8px;overflow:hidden;margin-bottom:12px;">'
+        + '<div id="dtBar" style="height:100%;width:0%;background:linear-gradient(90deg,#6366f1,#8b5cf6);border-radius:10px;transition:width 0.3s;"></div></div>'
+        + '<p id="dtPct" style="font-size:0.8rem;opacity:0.4;margin:0;">0%</p></div>';
+      document.body.appendChild(ov);
+
+      // Collect translatable elements (skip code/pre/script)
+      var els = [];
+      document.querySelectorAll('#content p, #content h3, #content li, #content .tip, #content .warn, #content .info').forEach(function (el) {
+        if (el.closest('pre') || el.closest('code') || el.closest('script') || el.closest('textarea')) return;
+        if (el.innerText.trim().length < 5) return;
+        els.push(el);
+      });
+
+      // Save originals for reset
+      if (!window._trOrig) window._trOrig = new Map();
+      els.forEach(function (el) { if (!window._trOrig.has(el)) window._trOrig.set(el, el.innerText); });
+
+      var total = els.length, done = 0;
+
+      // Translate with concurrency limit of 2 (safer for rate limits)
+      for (var i = 0; i < total; i += 2) {
+        var batch = els.slice(i, i + 2);
+        await Promise.all(batch.map(async function (el) {
+          try {
+            var txt = el.innerText;
+            var tr = await fetchGTrans(txt, targetLang);
+            if (tr && tr !== txt) el.innerText = tr;
+          } catch (e) { console.warn('Translation error:', e); }
+          done++;
+          var pct = Math.round((done / total) * 100);
+          var bar = document.getElementById('dtBar');
+          var stat = document.getElementById('dtStat');
+          var pctEl = document.getElementById('dtPct');
+          if (bar) bar.style.width = pct + '%';
+          if (stat) stat.textContent = 'Translating ' + done + ' of ' + total + '...';
+          if (pctEl) pctEl.textContent = pct + '%';
+        }));
+        await new Promise(function (r) { setTimeout(r, 100); });
+      }
+
+      // Done
+      setTimeout(function () { ov.remove(); showResetBtn(); }, 400);
+    }
+
+    function showResetBtn() {
+      if (document.getElementById('resetLangBtn')) return;
+      var btn = document.createElement('button');
+      btn.id = 'resetLangBtn';
+      btn.innerHTML = '🔄 Back to English';
+      btn.style.cssText = 'position:fixed;top:20px;right:20px;z-index:99999;background:var(--accent,#6366f1);color:#fff;border:none;padding:12px 24px;border-radius:12px;font-weight:700;cursor:pointer;font-size:0.9rem;box-shadow:0 5px 20px rgba(0,0,0,0.3);transition:0.3s;';
+      btn.onclick = function () {
+        if (window._trOrig) {
+          window._trOrig.forEach(function (orig, el) { el.innerText = orig; });
+          window._trOrig = null;
+        }
+        btn.remove();
+      };
+      document.body.appendChild(btn);
+    }
+
+    function selectLanguage(val, langName) {
+      // CRITICAL: On file:// protocol, ALWAYS use direct API
+      // Google Translate widget CANNOT translate local files even if it loads
+      if (location.protocol === 'file:') {
+        directTranslatePage(val, langName);
+        return;
+      }
+
+      var googleSelect = document.querySelector('.goog-te-combo');
+
+      // On HTTP/HTTPS: If Google Translate widget is loaded, use it
+      if (googleSelect && googleSelect.options.length > 1) {
+        var options = Array.from(googleSelect.options);
+        var match = options.find(function (o) { return o.value === val; });
+        if (!match) match = options.find(function (o) { return o.value.startsWith(val) || val.startsWith(o.value); });
+        if (!match) {
+          var NAME_MAP = {
+            'bho': 'bhojpuri', 'doi': 'dogri', 'mai': 'maithili',
+            'sa': 'sanskrit', 'sd': 'sindhi', 'as': 'assamese',
+            'or': 'odia', 'si': 'sinhala', 'my': 'burmese',
+            'km': 'khmer', 'ka': 'georgian', 'hy': 'armenian',
+            'am': 'amharic', 'zu': 'zulu', 'sw': 'swahili',
+            'ht': 'haitian', 'tl': 'filipino', 'iw': 'hebrew',
+            'no': 'norwegian', 'fa': 'persian'
+          };
+          var nm = (NAME_MAP[val] || val).toLowerCase();
+          match = options.find(function (o) { return o.text.toLowerCase().includes(nm); });
+        }
+        googleSelect.value = match ? match.value : val;
+        googleSelect.dispatchEvent(new Event('change'));
+        document.getElementById('translateModal').close();
+        return;
+      }
+
+      // Fallback for HTTP but widget not loaded yet
+      directTranslatePage(val, langName);
+    }
+
+    // --- ZEN MODE ---
+    let isZenMode = false;
+    function toggleZenMode() {
+      isZenMode = !isZenMode;
+      const btn = document.getElementById('zenBtn');
+      if (isZenMode) {
+        document.body.classList.add('zen-mode');
+        btn.innerHTML = '✨ Exit Zen Mode';
+      } else {
+        document.body.classList.remove('zen-mode');
+        btn.innerHTML = '👁️ Zen Mode';
+      }
+    }
+  </script>
+
+  <!-- Google Translate Initialization -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'hi,sa,mr,bn,gu,ta,te,ur,kn,ml,pa,sd,ne,si,as,or,bho,doi,mai,en,es,fr,de,zh-CN,ja,ko,ru,ar,pt,it,tr,th,vi,id,nl,pl,uk,sv,el,iw,fi,da,no,cs,ro,hu,fa,sw,ms,tl,my,km,ka,hy,am,zu,ht,sr,hr,bg,sk,lt,lv,et,sl,is,ca,gl,eu,cy,ga,kk,uz,az,yo,so,mg,sm,haw,lo',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- Service Worker Registration for PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').then(function (registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
+  <!-- BOTTOM NAV (Mobile Only) -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'})"
+      class="nav-item">🏠<span>Home</span></a>
+    <a href="javascript:void(0)" onclick="openCmdK()" class="nav-item">🔍<span>Search</span></a>
+    <a href="javascript:void(0)" onclick="openQuiz()" class="nav-item">🎯<span>Quiz</span></a>
+    <a href="javascript:void(0)" onclick="openTranslateModal()" class="nav-item">🌍<span>Translate</span></a>
+    <a href="javascript:void(0)" onclick="document.getElementById('sbOpen').click()"
+      class="nav-item">☰<span>Menu</span></a>
+  </nav>
+
+  <!-- Donate QR Modal -->
+  <div class="donate-overlay" id="donate-overlay" onclick="closeDonate(event)">
+    <div class="donate-modal" onclick="event.stopPropagation()">
+      <h3>❤️ Donate Sanskar</h3>
+      <p>Scan the QR code below with any UPI app to support <strong>Ram Sandesh</strong>. Every contribution helps keep
+        this project alive!</p>
+      <img src="Payment-Ramsandesh.jpeg" alt="Payment QR Code - Ram Sandesh">
+      <a href="https://rzp.io/l/Sanskar" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:linear-gradient(135deg, #6c63ff, #5b52e0);color:#fff;padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:700;font-size:0.95rem;margin-top:12px;transition:transform 0.2s;">💳 Pay via Razorpay</a>
+      <br>
+      <a href="https://www.buymeacoffee.com/sanskarIN" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:linear-gradient(135deg, #FFDD00, #FF6600);color:#000;padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:700;font-size:0.95rem;margin-top:12px;transition:transform 0.2s;"><img src="bmc-logo.jpg" alt="BMC" style="width:24px;height:24px;border-radius:6px;vertical-align:middle;margin-right:8px;">Buy Me a Coffee</a>
+      <br>
+      <button class="donate-close" onclick="closeDonate()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openDonate() { document.getElementById('donate-overlay').classList.add('active'); }
+    function closeDonate(e) { if (!e || e.target.id === 'donate-overlay') document.getElementById('donate-overlay').classList.remove('active'); }
+    window.addEventListener('keydown', function (e) { if (e.key === 'Escape') { var d = document.getElementById('donate-overlay'); if (d) d.classList.remove('active'); } });
+  </script>
+
+<a href="../index.html" id="homeBtn" style="position:fixed;bottom:20px;left:20px;width:48px;height:48px;background:linear-gradient(135deg,#6c63ff,#3ecfcf);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:9999;box-shadow:0 4px 20px rgba(108,99,255,0.4);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/><polyline points='9 22 9 12 15 12 15 22'/></svg></a>
+</body>
+
+</html>
+
+
