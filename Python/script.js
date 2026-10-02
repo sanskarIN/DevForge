@@ -349,6 +349,64 @@ class Point: x: int\n</code></pre>`
   <h4>💻 Code Examples</h4>
   <pre><code class="language-python">\nmatch x:
   case 1: pass\n</code></pre>`
+  },
+  {
+    id: "py-31", title: "Closures", badge: "ADVANCED", emoji: "🔒", defaultCode: `def make_mul(n):
+  return lambda x: x * n`,
+    content: `<h3>📌 Deep Dive: Closures</h3>
+  <p>Functions that remember their enclosing scope.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Variables from the outer scope are captured by reference.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ndef make_mul(n):
+  return lambda x: x * n\n</code></pre>`
+  },
+  {
+    id: "py-32", title: "map/filter/reduce", badge: "PYTHONIC", emoji: "🗺️", defaultCode: `list(map(lambda x: x*2, [1,2]))`,
+    content: `<h3>📌 Deep Dive: map/filter/reduce</h3>
+  <p>Functional programming tools.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Built-in iterators for processing collections.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nlist(map(lambda x: x*2, [1,2]))\n</code></pre>`
+  },
+  {
+    id: "py-33", title: "*args/**kwargs", badge: "CORE", emoji: "✨", defaultCode: `def f(*args, **kwargs): pass`,
+    content: `<h3>📌 Deep Dive: *args/**kwargs</h3>
+  <p>Variable length arguments.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Packed into tuple and dictionary respectively.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ndef f(*args, **kwargs): pass\n</code></pre>`
+  },
+  {
+    id: "py-34", title: "Property decorators", badge: "OOP", emoji: "🏠", defaultCode: `@property
+def x(self): return self._x`,
+    content: `<h3>📌 Deep Dive: Property decorators</h3>
+  <p>Managed attributes.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Provides getters and setters transparently.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\n@property
+def x(self): return self._x\n</code></pre>`
+  },
+  {
+    id: "py-35", title: "Abstract classes (ABC)", badge: "OOP", emoji: "📐", defaultCode: `class Shape(ABC):
+  @abstractmethod
+  def area(self): pass`,
+    content: `<h3>📌 Deep Dive: Abstract classes (ABC)</h3>
+  <p>Interfaces in Python.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Cannot be instantiated directly.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nclass Shape(ABC):
+  @abstractmethod
+  def area(self): pass\n</code></pre>`
   }
 ];
 
