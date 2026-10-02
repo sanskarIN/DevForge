@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Mastery | DevForge</title>
+    <link rel="icon" href="../splash.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="loader">
+            <img src="../splash.png" alt="DevForge Logo">
+            <h2>Loading Rust Mastery...</h2>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../splash.png" alt="Logo">
+            <span>DevForge</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../HTML/index.html">HTML</a></li>
+            <li><a href="../CSS/index.html">CSS</a></li>
+            <li><a href="../JS/index.html">JS</a></li>
+            <li><a href="../React/index.html">React</a></li>
+            <li><a href="../Python/index.html">Python</a></li>
+            <li><a href="../TypeScript/index.html">TypeScript</a></li>
+            <li><a href="index.html" class="active">Rust</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="global-search" placeholder="Search topics (Ctrl+K)...">
+            </div>
+            <div class="theme-selector">
+                <button id="theme-btn"><i class="fas fa-palette"></i></button>
+                <div class="theme-dropdown" id="theme-dropdown"></div>
+            </div>
+            <div class="user-stats">
+                <span class="xp-badge"><i class="fas fa-star"></i> <span id="user-xp">0</span> XP</span>
+                <span class="rank-badge" id="user-rank">Novice</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fa-brands fa-rust"></i> Rust Topics</h3>
+                <button id="toggle-favorites"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="learning-progress"></div>
+            </div>
+            <p class="progress-text"><span id="completed-count">0</span>/30 Completed</p>
+            <ul id="topic-list" class="topic-list">
+                <!-- Topics injected via JS -->
+            </ul>
+        </aside>
+
+        <!-- Content Area -->
+        <section class="content-area">
+            <header class="hero">
+                <h1>Rust Mastery</h1>
+                <p>Systems programming with safety and speed</p>
+            </header>
+            
+            <div id="content-display" class="content-display glass-panel">
+                <div class="placeholder">
+                    <i class="fa-brands fa-rust placeholder-icon"></i>
+                    <h2>Select a topic to start learning</h2>
+                    <p>Master memory safety, concurrency, and performance with Rust.</p>
+                </div>
+            </div>
+
+            <!-- Code Playground -->
+            <div class="playground glass-panel">
+                <div class="playground-header">
+                    <h3><i class="fas fa-code"></i> Rust Playground</h3>
+                    <div class="playground-actions">
+                        <button id="run-code"><i class="fas fa-play"></i> Run Code</button>
+                        <button id="copy-code"><i class="far fa-copy"></i></button>
+                    </div>
+                </div>
+                <div class="editor-container">
+                    <textarea id="code-editor" spellcheck="false">// Write your Rust code here</textarea>
+                </div>
+                <div class="output-container">
+                    <div class="output-header">Output</div>
+                    <pre id="code-output">Output will appear here...</pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://github.com/sanskarIN" target="_blank"><i class="fab fa-github"></i> GitHub: sanskarIN</a>
+                <a href="https://youtube.com/@sanskarIN" target="_blank"><i class="fab fa-youtube"></i> YouTube: @sanskarIN</a>
+                <a href="https://linkedin.com/in/sanskarIN" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn: sanskarIN</a>
+                <a href="https://twitter.com/Sanskar_in" target="_blank"><i class="fab fa-twitter"></i> Twitter: @Sanskar_in</a>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="developer.html">Developer</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="support.html">Support</a>
+                <a href="terms.html">Terms</a>
+                <a href="thanks.html">Thanks</a>
+            </div>
+            <div class="footer-contact">
+                <p>Email: sanskarin@outlook.in | sanskarin.business@gmail.com | supportramsandesh@gmail.com</p>
+                <p>Support: <a href="https://sanskarIN.gumroad.com" target="_blank">Gumroad</a> | <a href="https://www.buymeacoffee.com/sanskarIN" target="_blank">Buy Me a Coffee</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
