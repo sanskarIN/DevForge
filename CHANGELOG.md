@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [5.0.0] — 2026-10-02
+
+### 🐍 Python Module — Complete Mastery (50 Concepts)
+- Rewrote Python/script.js with 50 comprehensive concepts
+- Concepts 1-30: Core Python (variables, OOP, async, decorators, pattern matching)
+- Concepts 31-50: Advanced (closures, metaclasses, itertools, threading, web scraping, testing, logging, SQLite, CSV, JSON)
+- Full gamification, 25+ themes, code playground
+
+### 🔷 TypeScript Module (NEW)
+- 30 concepts: Type Annotations, Interfaces, Generics, Utility Types, Conditional Types, Mapped Types, Decorators, Declaration Files, and more
+- Full gamification, code playground, 25+ themes
+- Secondary pages: about, developer, privacy, support, terms, thanks, 404
+
+### 🦀 Rust Module (NEW)
+- 30 concepts: Ownership, Borrowing, Lifetimes, Traits, Generics, Smart Pointers, Concurrency, Async, Macros, Unsafe, and more
+- Full gamification, code playground, 25+ themes
+- Secondary pages: about, developer, privacy, support, terms, thanks, 404
+
+### 🧭 Navigation
+- Updated cross-module navigation across all modules
+- 7 learning modules: HTML, CSS, JavaScript, React, Python, TypeScript, Rust
+- Total concepts: 700+
+
+---
+
 ## [4.0.0] — 2026-09-28
 
 ### 🎉 Major Rebrand — DevForge
