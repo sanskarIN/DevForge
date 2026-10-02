@@ -517,6 +517,60 @@ con = sqlite3.connect(':memory:')`,
   <h4>💻 Code Examples</h4>
   <pre><code class="language-python">\nimport sqlite3
 con = sqlite3.connect(':memory:')\n</code></pre>`
+  },
+  {
+    id: "py-46", title: "unittest/pytest", badge: "TESTING", emoji: "🧪", defaultCode: `def test_f(): assert True`,
+    content: `<h3>📌 Deep Dive: unittest/pytest</h3>
+  <p>Testing frameworks.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Ensures code correctness with assertions.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ndef test_f(): assert True\n</code></pre>`
+  },
+  {
+    id: "py-47", title: "Logging", badge: "LIBRARY", emoji: "📝", defaultCode: `import logging
+logging.warning('hi')`,
+    content: `<h3>📌 Deep Dive: Logging</h3>
+  <p>Track events.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Flexible event logging system.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport logging
+logging.warning('hi')\n</code></pre>`
+  },
+  {
+    id: "py-48", title: "Threading", badge: "CONCURRENCY", emoji: "🧵", defaultCode: `import threading`,
+    content: `<h3>📌 Deep Dive: Threading</h3>
+  <p>Multiple threads.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Limited by GIL for CPU-bound tasks.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport threading\n</code></pre>`
+  },
+  {
+    id: "py-49", title: "Multiprocessing", badge: "CONCURRENCY", emoji: "⚡", defaultCode: `import multiprocessing`,
+    content: `<h3>📌 Deep Dive: Multiprocessing</h3>
+  <p>Multiple processes.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Bypasses GIL using separate processes.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport multiprocessing\n</code></pre>`
+  },
+  {
+    id: "py-50", title: "Web Scraping", badge: "LIBRARY", emoji: "🕸️", defaultCode: `import requests
+from bs4 import BeautifulSoup`,
+    content: `<h3>📌 Deep Dive: Web Scraping</h3>
+  <p>Extract web data.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Parse HTML trees easily.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport requests
+from bs4 import BeautifulSoup\n</code></pre>`
   }
 ];
 
