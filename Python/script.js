@@ -461,6 +461,62 @@ itertools.cycle([1])`,
   <h4>💻 Code Examples</h4>
   <pre><code class="language-python">\nimport itertools
 itertools.cycle([1])\n</code></pre>`
+  },
+  {
+    id: "py-41", title: "functools module", badge: "LIBRARY", emoji: "🛠️", defaultCode: `from functools import lru_cache`,
+    content: `<h3>📌 Deep Dive: functools module</h3>
+  <p>Higher-order functions.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Includes partial, lru_cache, wraps.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nfrom functools import lru_cache\n</code></pre>`
+  },
+  {
+    id: "py-42", title: "pathlib module", badge: "LIBRARY", emoji: "📁", defaultCode: `from pathlib import Path`,
+    content: `<h3>📌 Deep Dive: pathlib module</h3>
+  <p>Object-oriented filesystem paths.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Replaces older os.path string manipulations.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nfrom pathlib import Path\n</code></pre>`
+  },
+  {
+    id: "py-43", title: "JSON handling", badge: "LIBRARY", emoji: "📄", defaultCode: `import json
+json.dumps({'a':1})`,
+    content: `<h3>📌 Deep Dive: JSON handling</h3>
+  <p>Parsing and serializing JSON.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Translates Python dicts/lists to JSON strings.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport json
+json.dumps({'a':1})\n</code></pre>`
+  },
+  {
+    id: "py-44", title: "CSV handling", badge: "LIBRARY", emoji: "📊", defaultCode: `import csv
+csv.reader(f)`,
+    content: `<h3>📌 Deep Dive: CSV handling</h3>
+  <p>Reading and writing CSV.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Parses comma-separated values safely.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport csv
+csv.reader(f)\n</code></pre>`
+  },
+  {
+    id: "py-45", title: "SQLite with Python", badge: "DATABASE", emoji: "🛢️", defaultCode: `import sqlite3
+con = sqlite3.connect(':memory:')`,
+    content: `<h3>📌 Deep Dive: SQLite with Python</h3>
+  <p>Built-in SQL database.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Lightweight disk-based database.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport sqlite3
+con = sqlite3.connect(':memory:')\n</code></pre>`
   }
 ];
 
