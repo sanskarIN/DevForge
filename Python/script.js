@@ -1,37 +1,365 @@
+// ===== SPLASH SCREEN =====
+setTimeout(() => {
+  const splash = document.getElementById('splash-screen');
+  if (splash) {
+    splash.classList.add('hide');
+    setTimeout(() => splash.remove(), 800);
+  }
+}, 2000);
+
+const PRESET_THEMES = [{"id": "dark", "name": "Midnight Dark", "bg": "#0a0a1a", "bg2": "#12122a", "bg3": "#0d0d22", "bg4": "#080818", "text": "#d0d0ee", "text2": "#b0b0d0", "text3": "#8888bb", "accent": "#6c63ff", "accent2": "#3ecfcf", "accent3": "#ffa36b", "border": "#6c63ff22", "card": "#12122a", "codeBg": "#080818", "sbBg": "#0f0f24", "hdrBg": "linear-gradient(135deg,#1a0a3e,#0f2027,#0a1628)"}, {"id": "light", "name": "Clean Light", "bg": "#f0f0f8", "bg2": "#ffffff", "bg3": "#f5f5ff", "bg4": "#eeeef8", "text": "#1a1a2e", "text2": "#333333", "text3": "#666666", "accent": "#5b54e6", "accent2": "#1aada0", "accent3": "#e8823a", "border": "#5b54e622", "card": "#ffffff", "codeBg": "#f0f0f8", "sbBg": "#ffffff", "hdrBg": "linear-gradient(135deg,#5b54e6,#1aada0)"}];
+
 const TAGS = [
-    { id: 1, title: 'Variables & Data Types', badge: 'Basics', emoji: '📦', content: '<h3>Variables</h3><p>Variables store data...</p>' },
-    { id: 2, title: 'Strings & String Methods', badge: 'Basics', emoji: '🔤', content: '<h3>Strings</h3><p>Text data...</p>' },
-    { id: 3, title: 'Lists', badge: 'Data Structures', emoji: '📋', content: '<h3>Lists</h3><p>Ordered mutable collections.</p>' },
-    { id: 4, title: 'Tuples', badge: 'Data Structures', emoji: '🔒', content: '<h3>Tuples</h3><p>Ordered immutable collections.</p>' },
-    { id: 5, title: 'Dictionaries', badge: 'Data Structures', emoji: '📖', content: '<h3>Dictionaries</h3><p>Key-value pairs.</p>' },
-    { id: 6, title: 'Sets', badge: 'Data Structures', emoji: '⭕', content: '<h3>Sets</h3><p>Unordered unique elements.</p>' },
-    { id: 7, title: 'Conditional Statements', badge: 'Control Flow', emoji: '🔀', content: '<h3>If/Elif/Else</h3><p>Branching logic.</p>' },
-    { id: 8, title: 'For Loops', badge: 'Control Flow', emoji: '🔄', content: '<h3>For Loops</h3><p>Iterate over sequences.</p>' },
-    { id: 9, title: 'While Loops', badge: 'Control Flow', emoji: '🔁', content: '<h3>While Loops</h3><p>Loop until condition is false.</p>' },
-    { id: 10, title: 'Functions', badge: 'Core', emoji: '🛠️', content: '<h3>Functions</h3><p>Reusable blocks of code.</p>' },
-    { id: 11, title: 'Lambda Functions', badge: 'Core', emoji: 'λ', content: '<h3>Lambda</h3><p>Anonymous inline functions.</p>' },
-    { id: 12, title: 'List Comprehensions', badge: 'Pythonic', emoji: '✨', content: '<h3>Comprehensions</h3><p>Concise list creation.</p>' },
-    { id: 13, title: 'Error Handling', badge: 'Core', emoji: '⚠️', content: '<h3>Try/Except</h3><p>Catch and handle exceptions.</p>' },
-    { id: 14, title: 'File I/O', badge: 'Core', emoji: '📁', content: '<h3>Files</h3><p>Reading and writing files.</p>' },
-    { id: 15, title: 'Classes & Objects', badge: 'OOP', emoji: '🏗️', content: '<h3>Classes</h3><p>Object-oriented programming.</p>' },
-    { id: 16, title: 'Inheritance', badge: 'OOP', emoji: '🧬', content: '<h3>Inheritance</h3><p>Extending classes.</p>' },
-    { id: 17, title: 'Decorators', badge: 'Advanced', emoji: '🎀', content: '<h3>Decorators</h3><p>Modify function behavior.</p>' },
-    { id: 18, title: 'Generators', badge: 'Advanced', emoji: '⚡', content: '<h3>Generators</h3><p>Yielding values lazily.</p>' },
-    { id: 19, title: 'Iterators', badge: 'Advanced', emoji: '🔄', content: '<h3>Iterators</h3><p>Objects implementing __iter__ and __next__.</p>' },
-    { id: 20, title: 'Context Managers', badge: 'Advanced', emoji: '📦', content: '<h3>With Statement</h3><p>Resource management.</p>' },
-    { id: 21, title: 'Regular Expressions', badge: 'Core', emoji: '🔍', content: '<h3>Regex</h3><p>Pattern matching in strings.</p>' },
-    { id: 22, title: 'Modules & Packages', badge: 'Architecture', emoji: '📦', content: '<h3>Modules</h3><p>Organizing code.</p>' },
-    { id: 23, title: 'Virtual Environments', badge: 'Tools', emoji: '🛡️', content: '<h3>Venv</h3><p>Isolated environments.</p>' },
-    { id: 24, title: 'pip & Package Management', badge: 'Tools', emoji: '📥', content: '<h3>Pip</h3><p>Installing packages.</p>' },
-    { id: 25, title: 'async/await', badge: 'Async', emoji: '⏱️', content: '<h3>Asyncio</h3><p>Asynchronous programming.</p>' },
-    { id: 26, title: 'Type Hints', badge: 'Modern', emoji: '🏷️', content: '<h3>Typing</h3><p>Static type annotations.</p>' },
-    { id: 27, title: 'dataclasses', badge: 'Modern', emoji: '📊', content: '<h3>Dataclasses</h3><p>Boilerplate-free classes.</p>' },
-    { id: 28, title: 'f-strings', badge: 'Modern', emoji: '📝', content: '<h3>Format Strings</h3><p>String interpolation.</p>' },
-    { id: 29, title: 'Walrus Operator', badge: 'Modern', emoji: '🦭', content: '<h3>:= Operator</h3><p>Assignment expressions.</p>' },
-    { id: 30, title: 'Pattern Matching', badge: 'Modern', emoji: '🧩', content: '<h3>Match/Case</h3><p>Structural pattern matching.</p>' }
+  {
+    id: "py-1", title: "Variables & Data Types", badge: "BASICS", emoji: "📦", defaultCode: `x = 10
+y = 3.14
+name = 'Alice'`,
+    content: `<h3>📌 Deep Dive: Variables & Data Types</h3>
+  <p>Variables store data. Python is dynamically typed.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Types are checked at runtime.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nx = 10
+y = 3.14
+name = 'Alice'\n</code></pre>`
+  },
+  {
+    id: "py-2", title: "Strings & String Methods", badge: "BASICS", emoji: "🔤", defaultCode: `s = 'hello'
+print(s.upper())`,
+    content: `<h3>📌 Deep Dive: Strings & String Methods</h3>
+  <p>Strings represent text.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Strings are immutable sequences of Unicode points.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ns = 'hello'
+print(s.upper())\n</code></pre>`
+  },
+  {
+    id: "py-3", title: "Lists", badge: "DATA", emoji: "📋", defaultCode: `lst = [1, 2, 3]
+lst.append(4)`,
+    content: `<h3>📌 Deep Dive: Lists</h3>
+  <p>Lists are ordered, mutable sequences.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Lists are dynamic arrays.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nlst = [1, 2, 3]
+lst.append(4)\n</code></pre>`
+  },
+  {
+    id: "py-4", title: "Tuples", badge: "DATA", emoji: "🔒", defaultCode: `t = (1, 2, 3)`,
+    content: `<h3>📌 Deep Dive: Tuples</h3>
+  <p>Tuples are ordered, immutable sequences.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Tuples provide performance and safety over lists.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nt = (1, 2, 3)\n</code></pre>`
+  },
+  {
+    id: "py-5", title: "Dictionaries", badge: "DATA", emoji: "📖", defaultCode: `d = {'a': 1}`,
+    content: `<h3>📌 Deep Dive: Dictionaries</h3>
+  <p>Dictionaries store key-value pairs.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Implemented as highly optimized hash tables.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nd = {'a': 1}\n</code></pre>`
+  },
+  {
+    id: "py-6", title: "Sets", badge: "DATA", emoji: "⭕", defaultCode: `s = {1, 2, 3}`,
+    content: `<h3>📌 Deep Dive: Sets</h3>
+  <p>Sets store unique elements.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Uses hash tables like dicts but only stores keys.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ns = {1, 2, 3}\n</code></pre>`
+  },
+  {
+    id: "py-7", title: "Conditional Statements", badge: "CONTROL", emoji: "🔀", defaultCode: `if x > 0:
+  print('pos')`,
+    content: `<h3>📌 Deep Dive: Conditional Statements</h3>
+  <p>If, elif, else for branching.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Evaluates truthiness of conditions.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nif x > 0:
+  print('pos')\n</code></pre>`
+  },
+  {
+    id: "py-8", title: "For Loops", badge: "CONTROL", emoji: "🔄", defaultCode: `for i in range(3):
+  print(i)`,
+    content: `<h3>📌 Deep Dive: For Loops</h3>
+  <p>Iterate over iterables.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Calls iter() and next() behind the scenes.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nfor i in range(3):
+  print(i)\n</code></pre>`
+  },
+  {
+    id: "py-9", title: "While Loops", badge: "CONTROL", emoji: "🔁", defaultCode: `while x > 0:
+  x -= 1`,
+    content: `<h3>📌 Deep Dive: While Loops</h3>
+  <p>Loop until false.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Evaluates condition before each iteration.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nwhile x > 0:
+  x -= 1\n</code></pre>`
+  },
+  {
+    id: "py-10", title: "Functions", badge: "CORE", emoji: "🛠️", defaultCode: `def add(a, b):
+  return a+b`,
+    content: `<h3>📌 Deep Dive: Functions</h3>
+  <p>Reusable blocks of code.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Functions are first-class objects.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ndef add(a, b):
+  return a+b\n</code></pre>`
+  },
+  {
+    id: "py-11", title: "Lambda Functions", badge: "CORE", emoji: "λ", defaultCode: `f = lambda x: x*2`,
+    content: `<h3>📌 Deep Dive: Lambda Functions</h3>
+  <p>Anonymous inline functions.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Expression-only functions without statements.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nf = lambda x: x*2\n</code></pre>`
+  },
+  {
+    id: "py-12", title: "List Comprehensions", badge: "PYTHONIC", emoji: "✨", defaultCode: `[x*2 for x in range(5)]`,
+    content: `<h3>📌 Deep Dive: List Comprehensions</h3>
+  <p>Concise way to build lists.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Often faster than equivalent for-loops.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\n[x*2 for x in range(5)]\n</code></pre>`
+  },
+  {
+    id: "py-13", title: "Error Handling", badge: "CORE", emoji: "⚠️", defaultCode: `try:
+  1/0
+except ZeroDivisionError:
+  pass`,
+    content: `<h3>📌 Deep Dive: Error Handling</h3>
+  <p>Try, except, finally.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Exceptions disrupt the normal flow of control.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ntry:
+  1/0
+except ZeroDivisionError:
+  pass\n</code></pre>`
+  },
+  {
+    id: "py-14", title: "File I/O", badge: "CORE", emoji: "📁", defaultCode: `with open('a.txt', 'w') as f:
+  f.write('hi')`,
+    content: `<h3>📌 Deep Dive: File I/O</h3>
+  <p>Read and write files.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>File objects act as iterators of lines.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nwith open('a.txt', 'w') as f:
+  f.write('hi')\n</code></pre>`
+  },
+  {
+    id: "py-15", title: "Classes & Objects", badge: "OOP", emoji: "🏗️", defaultCode: `class A:
+  def __init__(self):
+    pass`,
+    content: `<h3>📌 Deep Dive: Classes & Objects</h3>
+  <p>Object-oriented programming.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Classes define type blueprints.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nclass A:
+  def __init__(self):
+    pass\n</code></pre>`
+  },
+  {
+    id: "py-16", title: "Inheritance", badge: "OOP", emoji: "🧬", defaultCode: `class B(A):
+  pass`,
+    content: `<h3>📌 Deep Dive: Inheritance</h3>
+  <p>Extend existing classes.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Python supports multiple inheritance with C3 MRO.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nclass B(A):
+  pass\n</code></pre>`
+  },
+  {
+    id: "py-17", title: "Decorators", badge: "ADVANCED", emoji: "🎀", defaultCode: `@timer
+def slow(): pass`,
+    content: `<h3>📌 Deep Dive: Decorators</h3>
+  <p>Modify function behavior.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Higher-order functions applied with @ syntax.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\n@timer
+def slow(): pass\n</code></pre>`
+  },
+  {
+    id: "py-18", title: "Generators", badge: "ADVANCED", emoji: "⚡", defaultCode: `def gen():
+  yield 1`,
+    content: `<h3>📌 Deep Dive: Generators</h3>
+  <p>Functions that yield.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>State is suspended between yields.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ndef gen():
+  yield 1\n</code></pre>`
+  },
+  {
+    id: "py-19", title: "Iterators", badge: "ADVANCED", emoji: "🔄", defaultCode: `it = iter([1])`,
+    content: `<h3>📌 Deep Dive: Iterators</h3>
+  <p>Objects with __next__.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>The protocol powering loops and comprehensions.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nit = iter([1])\n</code></pre>`
+  },
+  {
+    id: "py-20", title: "Context Managers", badge: "ADVANCED", emoji: "📦", defaultCode: `with open('f') as f: pass`,
+    content: `<h3>📌 Deep Dive: Context Managers</h3>
+  <p>Manage resources with `with`.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Implemented via __enter__ and __exit__.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nwith open('f') as f: pass\n</code></pre>`
+  },
+  {
+    id: "py-21", title: "Regular Expressions", badge: "CORE", emoji: "🔍", defaultCode: `import re
+re.match(r'\d+', '123')`,
+    content: `<h3>📌 Deep Dive: Regular Expressions</h3>
+  <p>Pattern matching.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Engine uses an internal state machine (NFA/DFA).</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport re
+re.match(r'\d+', '123')\n</code></pre>`
+  },
+  {
+    id: "py-22", title: "Modules & Packages", badge: "ARCH", emoji: "📦", defaultCode: `import math`,
+    content: `<h3>📌 Deep Dive: Modules & Packages</h3>
+  <p>Organize code.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Modules are cached in sys.modules.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport math\n</code></pre>`
+  },
+  {
+    id: "py-23", title: "Virtual Environments", badge: "TOOLS", emoji: "🛡️", defaultCode: `python -m venv env`,
+    content: `<h3>📌 Deep Dive: Virtual Environments</h3>
+  <p>Isolate dependencies.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Alters PATH and sys.prefix.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\npython -m venv env\n</code></pre>`
+  },
+  {
+    id: "py-24", title: "pip & Packages", badge: "TOOLS", emoji: "📥", defaultCode: `pip install requests`,
+    content: `<h3>📌 Deep Dive: pip & Packages</h3>
+  <p>Install packages.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Downloads and unpacks from PyPI.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\npip install requests\n</code></pre>`
+  },
+  {
+    id: "py-25", title: "async/await", badge: "ASYNC", emoji: "⏱️", defaultCode: `async def main(): pass`,
+    content: `<h3>📌 Deep Dive: async/await</h3>
+  <p>Concurrent IO.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Event loops schedule coroutines.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nasync def main(): pass\n</code></pre>`
+  },
+  {
+    id: "py-26", title: "Type Hints", badge: "MODERN", emoji: "🏷️", defaultCode: `def add(a: int) -> int: return a`,
+    content: `<h3>📌 Deep Dive: Type Hints</h3>
+  <p>Static typing info.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Ignored at runtime, used by mypy.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ndef add(a: int) -> int: return a\n</code></pre>`
+  },
+  {
+    id: "py-27", title: "dataclasses", badge: "MODERN", emoji: "📊", defaultCode: `@dataclass
+class Point: x: int`,
+    content: `<h3>📌 Deep Dive: dataclasses</h3>
+  <p>Boilerplate-free classes.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Auto-generates __init__, __repr__, etc.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\n@dataclass
+class Point: x: int\n</code></pre>`
+  },
+  {
+    id: "py-28", title: "f-strings", badge: "MODERN", emoji: "📝", defaultCode: `f'{x=}'`,
+    content: `<h3>📌 Deep Dive: f-strings</h3>
+  <p>Interpolate strings.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Evaluated at runtime efficiently.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nf'{x=}'\n</code></pre>`
+  },
+  {
+    id: "py-29", title: "Walrus Operator", badge: "MODERN", emoji: "🦭", defaultCode: `if (n := len(s)) > 0: pass`,
+    content: `<h3>📌 Deep Dive: Walrus Operator</h3>
+  <p>Assignment expressions.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Introduced in Python 3.8.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nif (n := len(s)) > 0: pass\n</code></pre>`
+  },
+  {
+    id: "py-30", title: "Pattern Matching", badge: "MODERN", emoji: "🧩", defaultCode: `match x:
+  case 1: pass`,
+    content: `<h3>📌 Deep Dive: Pattern Matching</h3>
+  <p>Structural matching.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Introduced in Python 3.10, not just a switch statement.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nmatch x:
+  case 1: pass\n</code></pre>`
+  }
 ];
 
-const PRESET_THEMES = ['dark', 'light', 'dracula', 'monokai']; // Simplified for brevity
+function getRank(count) {
+  if (count < 5) return { title: 'Python Novice', color: '#888' };
+  if (count < 10) return { title: 'Script Apprentice', color: '#4ade80' };
+  if (count < 15) return { title: 'Module Builder', color: '#3b82f6' };
+  if (count < 20) return { title: 'OOP Expert', color: '#a855f7' };
+  if (count < 25) return { title: 'Async Master', color: '#f59e0b' };
+  return { title: 'Python Grandmaster', color: '#ef4444' };
+}
 
 let masteredTags = JSON.parse(localStorage.getItem('pythonMasteredTags')) || [];
 let userXP = parseInt(localStorage.getItem('pythonUserXP')) || 0;
@@ -41,13 +369,14 @@ function init() {
     renderSidebar();
     updateStats();
     
-    document.getElementById('search').addEventListener('input', (e) => {
+    document.getElementById('search')?.addEventListener('input', (e) => {
         renderSidebar(e.target.value.toLowerCase());
     });
 }
 
 function renderSidebar(filter = '') {
     const list = document.getElementById('concept-list');
+    if (!list) return;
     list.innerHTML = '';
     TAGS.filter(t => t.title.toLowerCase().includes(filter)).forEach(tag => {
         const li = document.createElement('li');
@@ -58,20 +387,28 @@ function renderSidebar(filter = '') {
 }
 
 function loadConcept(tag) {
-    document.getElementById('content-area').innerHTML = tag.content;
+    const ca = document.getElementById('content-area');
+    if (ca) ca.innerHTML = tag.content;
     if (!masteredTags.includes(tag.id)) {
         masteredTags.push(tag.id);
         userXP += 100;
         localStorage.setItem('pythonMasteredTags', JSON.stringify(masteredTags));
-        localStorage.setItem('pythonUserXP', userXP);
+        localStorage.setItem('pythonUserXP', userXP.toString());
         updateStats();
     }
 }
 
 function updateStats() {
-    document.getElementById('mastered-count').innerText = `Mastered: ${masteredTags.length}/${TAGS.length}`;
-    document.getElementById('progress').style.width = `${(masteredTags.length / TAGS.length) * 100}%`;
-    document.getElementById('rank').innerText = `XP: ${userXP}`;
+    const mc = document.getElementById('mastered-count');
+    if (mc) mc.innerText = `Mastered: ${masteredTags.length}/${TAGS.length}`;
+    const pr = document.getElementById('progress');
+    if (pr) pr.style.width = `${(masteredTags.length / TAGS.length) * 100}%`;
+    const r = document.getElementById('rank');
+    if (r) {
+        const rankInfo = getRank(masteredTags.length);
+        r.innerText = `XP: ${userXP} | Rank: ${rankInfo.title}`;
+        r.style.color = rankInfo.color;
+    }
 }
 
 window.onload = init;
