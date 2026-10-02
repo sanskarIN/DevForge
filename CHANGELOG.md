@@ -24,10 +24,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Full gamification, code playground, 25+ themes
 - Secondary pages: about, developer, privacy, support, terms, thanks, 404
 
+### 🐹 Go Module (NEW)
+- 30 concepts: Goroutines, Channels, Interfaces, Error Handling, Generics, HTTP Server, Context, Reflection, and more
+- Full gamification, code playground, 25+ themes
+- Secondary pages: about, developer, privacy, support, terms, thanks, 404
+
+### 🗄️ SQL Module (NEW)
+- 30 concepts: JOINs, Subqueries, Window Functions, CTEs, Transactions, Indexes, Views, Normalization, and more
+- Full gamification, code playground, 25+ themes
+- Secondary pages: about, developer, privacy, support, terms, thanks, 404
+
 ### 🧭 Navigation
 - Updated cross-module navigation across all modules
-- 7 learning modules: HTML, CSS, JavaScript, React, Python, TypeScript, Rust
-- Total concepts: 700+
+- 9 learning modules: HTML, CSS, JavaScript, React, Python, TypeScript, Rust, Go, SQL
+- Total concepts: 800+
 
 ---
 
