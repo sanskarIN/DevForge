@@ -407,6 +407,60 @@ def x(self): return self._x\n</code></pre>`
   <pre><code class="language-python">\nclass Shape(ABC):
   @abstractmethod
   def area(self): pass\n</code></pre>`
+  },
+  {
+    id: "py-36", title: "Metaclasses", badge: "ADVANCED", emoji: "🧠", defaultCode: `class Meta(type): pass`,
+    content: `<h3>📌 Deep Dive: Metaclasses</h3>
+  <p>Classes of classes.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Controls class creation logic.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nclass Meta(type): pass\n</code></pre>`
+  },
+  {
+    id: "py-37", title: "Descriptors", badge: "ADVANCED", emoji: "📝", defaultCode: `def __get__(self, obj, type): pass`,
+    content: `<h3>📌 Deep Dive: Descriptors</h3>
+  <p>Managed class attributes.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>The mechanism behind properties and methods.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\ndef __get__(self, obj, type): pass\n</code></pre>`
+  },
+  {
+    id: "py-38", title: "__slots__", badge: "ADVANCED", emoji: "🗄️", defaultCode: `class A:
+  __slots__ = ['x']`,
+    content: `<h3>📌 Deep Dive: __slots__</h3>
+  <p>Memory optimization.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Prevents creation of instance dicts.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nclass A:
+  __slots__ = ['x']\n</code></pre>`
+  },
+  {
+    id: "py-39", title: "Collections module", badge: "LIBRARY", emoji: "📦", defaultCode: `from collections import Counter`,
+    content: `<h3>📌 Deep Dive: Collections module</h3>
+  <p>Specialized containers.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>Includes namedtuple, deque, Counter, etc.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nfrom collections import Counter\n</code></pre>`
+  },
+  {
+    id: "py-40", title: "itertools module", badge: "LIBRARY", emoji: "🔄", defaultCode: `import itertools
+itertools.cycle([1])`,
+    content: `<h3>📌 Deep Dive: itertools module</h3>
+  <p>Iterator building blocks.</p>
+  <h4>⚙️ Under the Hood</h4>
+  <p>High-performance iterators.</p>
+  <div class="cb"><div class="cb-h"><span>💡 Pro Tip</span></div><div class="cb-b"><p>Follow PEP 8 and Pythonic idioms for best results.</p></div></div>
+  <h4>💻 Code Examples</h4>
+  <pre><code class="language-python">\nimport itertools
+itertools.cycle([1])\n</code></pre>`
   }
 ];
 
