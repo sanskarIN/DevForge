@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [5.1.0] — 2026-10-05
+
+### 🔷 TypeScript Module — Enhanced (50 Concepts)
+- Added 20 advanced concepts: Branded Types, Recursive Types, Type Narrowing, Module Augmentation, TypeScript with Express/Node.js, Migration guide, and more
+
+### 💜 C# Module (NEW)
+- 40 concepts covering core C#, OOP, LINQ, async/await, ASP.NET Core, Entity Framework, Web API, SignalR, testing, and design patterns
+- Full gamification, 25+ themes, code playground
+- Secondary pages: about, developer, privacy, support, terms, thanks, 404
+
+### 📊 Platform Growth
+- 10 learning modules: HTML, CSS, JavaScript, React, Python, TypeScript, Rust, Go, SQL, C#
+- Total concepts: 900+
+
+---
+
 ## [5.0.0] — 2026-10-02
 
 ### 🐍 Python Module — Complete Mastery (50 Concepts)
