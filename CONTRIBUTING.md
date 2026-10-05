@@ -92,6 +92,7 @@ DevForge/
 ├── Rust/                   # Rust Mastery module (same structure)
 ├── Go/                     # Go Mastery module (same structure)
 ├── SQL/                    # SQL Mastery module (same structure)
+├── CSharp/                 # C# Mastery module (same structure)
 ├── about.html              # Root about page
 ├── developer.html          # Root developer docs
 ├── privacy.html            # Root privacy policy
